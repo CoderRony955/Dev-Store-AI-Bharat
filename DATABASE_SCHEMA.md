@@ -4,187 +4,131 @@ Complete schema for all tables in the Dev-Store AI/ML Resource Discovery Platfor
 
 ---
 
-## TABLE 1: `resources` ✅ (Exists — needs 6 new columns)
-
-```sql
+-- TABLE 1: resources
 CREATE TABLE resources (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    id              SERIAL PRIMARY KEY,
     name            VARCHAR(255) NOT NULL,
     description     TEXT,
-    category        VARCHAR(50) NOT NULL,       -- 'api' | 'model' | 'dataset' | 'solution'
+    category        VARCHAR(50) NOT NULL,
     source_url      VARCHAR(500),
     license         VARCHAR(100),
-    price_type      VARCHAR(20) DEFAULT 'free', -- 'free' | 'paid'
+    price_type      VARCHAR(20) DEFAULT 'free',
     stars           INTEGER DEFAULT 0,
     downloads       INTEGER DEFAULT 0,
-    activity_score  FLOAT DEFAULT 0.0,
-
-    -- New columns to add
+    activity_score  DOUBLE PRECISION DEFAULT 0.0,
     author          VARCHAR(255),
-    tags            TEXT,                       -- JSON array string: ["nlp","vision"]
+    tags            TEXT,
     version         VARCHAR(50),
     thumbnail_url   VARCHAR(500),
     readme_url      VARCHAR(500),
-    rank_score      FLOAT DEFAULT 0.0,          -- cached ranking score
-
-    created_at      DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updated_at      DATETIME
+    rank_score      DOUBLE PRECISION DEFAULT 0.0,
+    created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at      TIMESTAMP
 );
-```
 
----
-
-## TABLE 2: `categories`
-
-```sql
+-- TABLE 2: categories
 CREATE TABLE categories (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
-    slug            VARCHAR(100) UNIQUE NOT NULL, -- 'api' | 'model' | 'dataset' | 'solution'
-    label           VARCHAR(100) NOT NULL,         -- 'APIs' | 'Models' | 'Datasets'
+    id              SERIAL PRIMARY KEY,
+    slug            VARCHAR(100) UNIQUE NOT NULL,
+    label           VARCHAR(100) NOT NULL,
     description     TEXT,
     resource_count  INTEGER DEFAULT 0,
-    created_at      DATETIME DEFAULT CURRENT_TIMESTAMP
+    created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-```
 
----
-
-## TABLE 3: `tags`
-
-```sql
+-- TABLE 3: tags
 CREATE TABLE tags (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
-    name            VARCHAR(100) UNIQUE NOT NULL, -- 'nlp', 'vision', 'audio'
+    id              SERIAL PRIMARY KEY,
+    name            VARCHAR(100) UNIQUE NOT NULL,
     slug            VARCHAR(100) UNIQUE NOT NULL,
     usage_count     INTEGER DEFAULT 0,
-    created_at      DATETIME DEFAULT CURRENT_TIMESTAMP
+    created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-```
 
----
-
-## TABLE 4: `resource_tags` (Many-to-Many)
-
-```sql
+-- TABLE 4: resource_tags
 CREATE TABLE resource_tags (
     resource_id     INTEGER NOT NULL REFERENCES resources(id) ON DELETE CASCADE,
     tag_id          INTEGER NOT NULL REFERENCES tags(id) ON DELETE CASCADE,
     PRIMARY KEY (resource_id, tag_id)
 );
-```
 
----
-
-## TABLE 5: `embeddings`
-
-```sql
+-- TABLE 5: embeddings
 CREATE TABLE embeddings (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    id              SERIAL PRIMARY KEY,
     resource_id     INTEGER UNIQUE NOT NULL REFERENCES resources(id) ON DELETE CASCADE,
-    vector          TEXT NOT NULL,              -- JSON float array (placeholder for OpenSearch)
-    model_used      VARCHAR(100) DEFAULT 'placeholder', -- 'text-embedding-ada-002' etc.
+    vector          TEXT NOT NULL,
+    model_used      VARCHAR(100) DEFAULT 'placeholder',
     dimensions      INTEGER DEFAULT 384,
-    created_at      DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updated_at      DATETIME
+    created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at      TIMESTAMP
 );
-```
 
----
-
-## TABLE 6: `bundles`
-
-```sql
+-- TABLE 6: bundles
 CREATE TABLE bundles (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    id              SERIAL PRIMARY KEY,
     name            VARCHAR(255) NOT NULL,
     description     TEXT,
-    use_case        VARCHAR(255),               -- 'Image Classification', 'Sentiment Analysis'
-    graph_json      TEXT,                       -- Full React Flow nodes+edges JSON (used by /blueprint/[bundleId])
+    use_case        VARCHAR(255),
+    graph_json      TEXT,
     is_featured     BOOLEAN DEFAULT FALSE,
-    created_at      DATETIME DEFAULT CURRENT_TIMESTAMP
+    created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-```
 
----
-
-## TABLE 7: `bundle_resources` (Many-to-Many)
-
-```sql
+-- TABLE 7: bundle_resources
 CREATE TABLE bundle_resources (
     bundle_id       INTEGER NOT NULL REFERENCES bundles(id) ON DELETE CASCADE,
     resource_id     INTEGER NOT NULL REFERENCES resources(id) ON DELETE CASCADE,
-    role            VARCHAR(50),               -- 'api' | 'model' | 'dataset'
-    order_index     INTEGER DEFAULT 0,         -- order in blueprint graph
+    role            VARCHAR(50),
+    order_index     INTEGER DEFAULT 0,
     PRIMARY KEY (bundle_id, resource_id)
 );
-```
 
----
-
-## TABLE 8: `boilerplate_requests`
-
-```sql
+-- TABLE 8: boilerplate_requests
 CREATE TABLE boilerplate_requests (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    id              SERIAL PRIMARY KEY,
     resource_id     INTEGER REFERENCES resources(id) ON DELETE SET NULL,
     bundle_id       INTEGER REFERENCES bundles(id) ON DELETE SET NULL,
-    language        VARCHAR(50) DEFAULT 'python', -- 'python' | 'node' | 'go'
-    framework       VARCHAR(50),                  -- 'fastapi' | 'express' | 'flask'
-    generated_code  TEXT,                         -- cached JSON output
-    ip_hash         VARCHAR(64),                  -- anonymized requester
-    created_at      DATETIME DEFAULT CURRENT_TIMESTAMP
+    language        VARCHAR(50) DEFAULT 'python',
+    framework       VARCHAR(50),
+    generated_code  TEXT,
+    ip_hash         VARCHAR(64),
+    created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-```
 
----
-
-## TABLE 9: `search_logs`
-
-```sql
+-- TABLE 9: search_logs
 CREATE TABLE search_logs (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    id              SERIAL PRIMARY KEY,
     query           VARCHAR(500) NOT NULL,
     category        VARCHAR(50),
     price_type      VARCHAR(20),
     results_count   INTEGER DEFAULT 0,
     clicked_id      INTEGER REFERENCES resources(id) ON DELETE SET NULL,
     session_id      VARCHAR(100),
-    created_at      DATETIME DEFAULT CURRENT_TIMESTAMP
+    created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-```
 
----
-
-## TABLE 10: `ingestion_logs`
-
-```sql
+-- TABLE 10: ingestion_logs
 CREATE TABLE ingestion_logs (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
-    source          VARCHAR(100) NOT NULL,         -- 'github' | 'huggingface' | 'manual'
-    status          VARCHAR(50) DEFAULT 'pending', -- 'pending' | 'running' | 'done' | 'failed'
+    id               SERIAL PRIMARY KEY,
+    source           VARCHAR(100) NOT NULL,
+    status           VARCHAR(50) DEFAULT 'pending',
     records_fetched  INTEGER DEFAULT 0,
     records_inserted INTEGER DEFAULT 0,
     records_skipped  INTEGER DEFAULT 0,
-    error_message   TEXT,
-    started_at      DATETIME,
-    finished_at     DATETIME,
-    created_at      DATETIME DEFAULT CURRENT_TIMESTAMP
+    error_message    TEXT,
+    started_at       TIMESTAMP,
+    finished_at      TIMESTAMP,
+    created_at       TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-```
 
----
-
-## TABLE 11: `rankings_cache`
-
-```sql
+-- TABLE 11: rankings_cache
 CREATE TABLE rankings_cache (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
-    cache_key       VARCHAR(255) UNIQUE NOT NULL, -- 'ranked_api_free', 'ranked_model_paid'
-    data_json       TEXT NOT NULL,                -- cached ranked JSON response
-    expires_at      DATETIME NOT NULL,
-    created_at      DATETIME DEFAULT CURRENT_TIMESTAMP
+    id              SERIAL PRIMARY KEY,
+    cache_key       VARCHAR(255) UNIQUE NOT NULL,
+    data_json       TEXT NOT NULL,
+    expires_at      TIMESTAMP NOT NULL,
+    created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-```
 
 ---
 

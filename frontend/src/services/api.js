@@ -14,11 +14,11 @@ class ApiService {
 
     try {
       const response = await fetch(url, config);
-      
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
+
       return await response.json();
     } catch (error) {
       console.error('API request failed:', error);
@@ -53,6 +53,15 @@ class ApiService {
   // Get single resource
   async getResource(id) {
     return this.request(`/api/v1/resources/${id}`);
+  }
+
+  // Get trending resources (sorted by rank)
+  async getTrending(filters = {}) {
+    const params = new URLSearchParams();
+    if (filters.resource_type && filters.resource_type !== "All") params.append('resource_type', filters.resource_type);
+    if (filters.limit) params.append('limit', filters.limit);
+
+    return this.request(`/api/v1/trending?${params}`);
   }
 
   // Health check

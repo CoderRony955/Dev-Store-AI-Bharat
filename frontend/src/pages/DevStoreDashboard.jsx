@@ -1,5 +1,6 @@
 // Dev-Store Dashboard — connected to OpenSearch + AWS Bedrock backend
 import { useState, useEffect, useCallback, useRef } from "react";
+import useSWR from "swr";
 import apiService from "../services/api";
 import useWindowSize from "../hooks/useWindowSize";
 import Tooltip from "../components/Tooltip";
@@ -74,9 +75,10 @@ function mapResource(r) {
 
   let installCommand = r.install_command || r.endpoint_url || "";
   if (!installCommand) {
-    if (r.resource_type === "API") installCommand = `curl ${(r.base_url || "https://api.example.com/v1")}`;
-    else if (r.resource_type === "Model") installCommand = `pip install transformers && hf download ${r.name?.replace(/\s+/g, "-").toLowerCase()}`;
-    else installCommand = `wget ${r.download_url || "https://huggingface.co/datasets/" + r.name?.replace(/\s+/g, "-").toLowerCase()}`;
+    const slug = r.name?.replace(/\s+/g, "-").toLowerCase() || "resource";
+    if (r.resource_type === "API") installCommand = `curl -X POST https://api.devstore.ai/v1/${slug}`;
+    else if (r.resource_type === "Model") installCommand = `pip install devstore && dv.load("${slug}")`;
+    else installCommand = `load_dataset("${slug}", split="train")`;
   }
 
   return {
@@ -93,6 +95,8 @@ function mapResource(r) {
     pricingType: r.pricing_type || "free",
     score: r.score,
     tags: r.tags || [],
+    provider: r.provider || (r.resource_type === "Model" ? "HuggingFace" : r.resource_type === "API" ? "AWS" : "Community"),
+    docsUrl: r.docs_url || "https://docs.example.com",
   };
 }
 
@@ -160,18 +164,22 @@ function ToolCard({ tool, index, isDark = true }) {
       onMouseLeave={() => setHovered(false)}
       style={{
         background: hovered
-          ? dk ? `linear-gradient(145deg, ${tool.accentColor}0D 0%, #131b2e 55%, #0f1525 100%)` : `linear-gradient(145deg, ${tool.accentColor}08 0%, #f8faff 55%, #f0f4ff 100%)`
-          : dk ? "#0f1628" : "#ffffff",
-        border: `1px solid ${hovered ? tool.accentColor + "28" : (dk ? "rgba(255,255,255,0.055)" : "rgba(59,130,246,0.1)")}`,
+          ? dk ? `linear-gradient(145deg, ${tool.accentColor}15 0%, rgba(2,6,23,0.7) 100%)` : `linear-gradient(145deg, ${tool.accentColor}08 0%, rgba(255,255,255,0.7) 100%)`
+          : dk ? "rgba(2,6,23,0.6)" : "rgba(255,255,255,0.6)",
+        backdropFilter: "blur(16px)",
+        WebkitBackdropFilter: "blur(16px)",
+        border: `1px solid ${hovered ? tool.accentColor + "40" : (dk ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.05)")}`,
         borderRadius: 24,
         padding: "22px 22px 20px",
         display: "flex", flexDirection: "column", gap: 14,
         position: "relative", overflow: "hidden",
-        transform: hovered ? "translateY(-3px)" : "translateY(0)",
+        height: "100%", minHeight: 240,
+        transform: hovered ? "scale(1.02)" : "scale(1)",
+        zIndex: hovered ? 40 : 1,
         boxShadow: hovered
           ? dk ? `0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px ${tool.accentColor}15, inset 0 1px 0 rgba(255,255,255,0.04)` : `0 20px 60px rgba(59,130,246,0.08), 0 0 0 1px ${tool.accentColor}10`
           : dk ? "0 2px 12px rgba(0,0,0,0.3)" : "0 2px 12px rgba(59,130,246,0.06)",
-        transition: "all 0.28s cubic-bezier(0.34,1.56,0.64,1)",
+        transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
         animationDelay: `${index * 60}ms`,
         animation: "cardIn 0.4s ease both",
       }}
@@ -270,62 +278,70 @@ function ToolCard({ tool, index, isDark = true }) {
       )}
 
       {/* Meta row */}
-      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 5, color: dk ? "rgba(255,255,255,0.3)" : "rgba(0,0,0,0.65)", fontSize: 12 }}>
-          <Icon d={Icons.Star} size={12} color="rgba(251,191,36,0.65)" />
-          <span style={{ fontFamily: "'Fira Code', monospace", fontWeight: 500 }}>{fmt(tool.stars)}</span>
+      <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap", margin: "auto 0 16px 0" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 4, color: dk ? "rgba(255,255,255,0.5)" : "rgba(0,0,0,0.65)", fontSize: 12, background: dk ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)", padding: "4px 8px", borderRadius: 6, border: dk ? "1px solid rgba(255,255,255,0.1)" : "1px solid rgba(0,0,0,0.1)" }}>
+          <Icon d={Icons.Globe} size={12} />
+          <span style={{ fontWeight: 600 }}>{tool.provider}</span>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 5, color: dk ? "rgba(255,255,255,0.3)" : "rgba(0,0,0,0.65)", fontSize: 12 }}>
-          <Icon d={Icons.Zap} size={12} color="rgba(96,165,250,0.65)" />
-          <span style={{ fontFamily: "'Fira Code', monospace", fontWeight: 500 }}>{tool.latency}ms</span>
-        </div>
-        <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 5, color: dk ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.55)", fontSize: 11 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 4, color: dk ? "rgba(255,255,255,0.5)" : "rgba(0,0,0,0.65)", fontSize: 12, background: dk ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)", padding: "4px 8px", borderRadius: 6, border: dk ? "1px solid rgba(255,255,255,0.1)" : "1px solid rgba(0,0,0,0.1)" }}>
           <Icon d={Icons.Activity} size={11} />
-          <span>P99</span>
+          <span style={{ fontFamily: "'Fira Code', monospace" }}>{tool.latency}ms (p99)</span>
         </div>
       </div>
 
-      {/* Install / Endpoint box */}
-      <div style={{
-        background: dk ? "rgba(0,0,0,0.45)" : "rgba(59,130,246,0.05)", borderRadius: 14, padding: "10px 14px",
-        border: `1px solid ${dk ? "rgba(255,255,255,0.055)" : "rgba(59,130,246,0.1)"}`, backdropFilter: "blur(4px)",
-      }}>
-        <code style={{
-          fontFamily: "'Fira Code', 'JetBrains Mono', monospace", fontSize: 11.5,
-          color: hovered ? `${tool.accentColor}CC` : (dk ? "rgba(96,165,250,0.65)" : "rgba(37,99,235,0.7)"),
-          whiteSpace: "nowrap", overflow: "hidden", display: "block", textOverflow: "ellipsis",
-          transition: "color 0.3s",
+      {/* Install / Endpoint box with integrated Copy */}
+      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        <div style={{
+          flex: 1, position: "relative",
+          background: dk ? "rgba(2,6,23,0.9)" : "rgba(241,245,249,0.9)",
+          borderRadius: 12, padding: "10px 12px",
+          border: `1px solid ${dk ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.05)"}`,
+          overflow: "hidden",
         }}>
-          {tool.installCommand}
-        </code>
-      </div>
+          <code style={{
+            fontFamily: "'JetBrains Mono', monospace", fontSize: 11,
+            display: "block", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
+            paddingRight: hovered ? 32 : 0, transition: "padding 0.2s",
+          }}>
+            {(() => {
+              const cmd = tool.installCommand;
+              const keywords = ["pip", "install", "curl", "wget", "load_dataset", "dv.load", "-X", "POST"];
+              return cmd.split(" ").map((word, i) => {
+                const isKey = keywords.some(k => word.includes(k));
+                const isUrl = word.includes("http");
+                let color = dk ? "rgba(255,255,255,0.6)" : "rgba(0,0,0,0.6)";
+                if (isKey) color = tool.accentColor;
+                if (isUrl) color = dk ? "rgba(147,197,253,0.8)" : "rgba(37,99,235,0.8)";
+                return <span key={i} style={{ color, marginRight: 4 }}>{word}</span>;
+              });
+            })()}
+          </code>
 
-      {/* Copy button */}
-      <button
-        onClick={handleCopy}
-        style={{
-          width: "100%", borderRadius: 99,
-          padding: "11px 0", cursor: "pointer",
-          fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: 13,
-          display: "flex", alignItems: "center", justifyContent: "center", gap: 7,
-          background: copied
-            ? "rgba(59,130,246,0.15)"
-            : hovered
-              ? `linear-gradient(135deg, ${tool.accentColor}50, ${tool.accentColor}30)`
-              : dk ? "rgba(59,130,246,0.15)" : "rgba(59,130,246,0.08)",
-          color: copied ? "#3B82F6" : (dk ? "rgba(255,255,255,0.8)" : "rgba(0,0,0,0.75)"),
-          border: copied
-            ? "1px solid rgba(59,130,246,0.35)"
-            : `1px solid ${hovered ? tool.accentColor + "45" : (dk ? "rgba(59,130,246,0.3)" : "rgba(59,130,246,0.2)")}`,
-          transition: "all 0.25s ease",
-          letterSpacing: "-0.01em",
-        }}
-        onMouseDown={e => e.currentTarget.style.transform = "scale(0.97)"}
-        onMouseUp={e => e.currentTarget.style.transform = "scale(1)"}
-      >
-        <Icon d={copied ? Icons.Check : Icons.Copy} size={14} color={copied ? "#3B82F6" : (dk ? "rgba(255,255,255,0.6)" : "rgba(0,0,0,0.5)")} />
-        {copied ? "Copied!" : "Copy Command"}
-      </button>
+          {hovered && (
+            <button
+              onClick={handleCopy}
+              style={{
+                position: "absolute", top: 6, right: 6, width: 28, height: 28, borderRadius: 8,
+                background: dk ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.05)",
+                border: `1px solid ${dk ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"}`,
+                display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer",
+                color: copied ? "#00FFA3" : (dk ? "rgba(255,255,255,0.4)" : "rgba(0,0,0,0.4)"),
+                transition: "all 0.2s", backdropFilter: "blur(4px)", zIndex: 10
+              }}>
+              <Icon d={copied ? Icons.Check : Icons.Copy} size={13} />
+            </button>
+          )}
+        </div>
+
+        <a href={tool.docsUrl} target="_blank" rel="noopener noreferrer" style={{
+          background: dk ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)", borderRadius: 10, padding: "8px 12px",
+          border: `1px solid ${dk ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"}`, cursor: "pointer",
+          color: dk ? "#fff" : "#000", fontSize: 11, fontWeight: 700, fontFamily: "'DM Sans', sans-serif",
+          textDecoration: "none"
+        }}>
+          Docs
+        </a>
+      </div>
     </div>
   );
 }
@@ -335,8 +351,10 @@ function SkeletonCard({ index, isDark = true }) {
   const dk = isDark;
   return (
     <div style={{
-      background: dk ? "#0f1628" : "#ffffff", borderRadius: 24, padding: "22px 22px 20px",
-      border: `1px solid ${dk ? "rgba(255,255,255,0.04)" : "rgba(59,130,246,0.08)"}`,
+      background: dk ? "rgba(2, 6, 23, 0.6)" : "rgba(255,255,255,0.6)", borderRadius: 24, padding: "22px 22px 20px",
+      backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)",
+      border: `1px solid ${dk ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.05)"}`,
+      minHeight: 240,
       animationDelay: `${index * 80}ms`, animation: "shimmer 1.6s ease infinite",
     }}>
       {[44, 10, 13, 10, 10, 40].map((h, i) => (
@@ -430,25 +448,23 @@ function AIChatPanel({ onClose, isDark = true, isMobile = false }) {
 
   return (
     <div style={{
-      position: "fixed", right: isMobile ? 0 : 24, bottom: isMobile ? 0 : 24, width: isMobile ? "100%" : 420, height: isMobile ? "100%" : 540,
-      background: dk ? "#0f1628" : "#ffffff", border: `1px solid ${dk ? "rgba(255,255,255,0.08)" : "rgba(59,130,246,0.12)"}`,
-      borderRadius: isMobile ? 0 : 24, display: "flex", flexDirection: "column",
-      boxShadow: dk ? "0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(59,130,246,0.08)" : "0 40px 100px rgba(0,0,0,0.1)",
-      zIndex: 100, animation: "cardIn 0.3s ease both",
+      width: "100%", height: "100%",
+      display: "flex", flexDirection: "column",
+      fontSize: isMobile ? 14 : 13,
     }}>
       {/* Header */}
-      <div style={{ padding: "16px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)", display: "flex", alignItems: "center", gap: 10 }}>
-        <div style={{ width: 32, height: 32, borderRadius: 10, background: "linear-gradient(135deg, #006B5D, #00FFA3)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <Icon d={Icons.Brain} size={15} color="white" />
+      <div style={{ padding: "20px", borderBottom: `1px solid ${dk ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.06)"}`, display: "flex", alignItems: "center", gap: 12 }}>
+        <div style={{ width: 36, height: 36, borderRadius: 10, background: "linear-gradient(135deg, #A855F7, #3B82F6)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <Icon d={Icons.Brain} size={18} color="white" />
         </div>
         <div>
-          <div style={{ fontWeight: 700, fontSize: 13, color: "rgba(255,255,255,0.88)" }}>Bedrock AI Assistant</div>
-          <div style={{ fontSize: 10, color: "rgba(0,255,163,0.7)", display: "flex", alignItems: "center", gap: 4 }}>
-            <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#00FFA3", animation: "pulseGlow 2s infinite" }} />
-            OpenSearch + AWS Bedrock
+          <div style={{ fontWeight: 700, fontSize: 14, color: dk ? "#fff" : "#000" }}>Intent Discovery</div>
+          <div style={{ fontSize: 10, color: dk ? "rgba(255,255,255,0.4)" : "rgba(0,0,0,0.5)", display: "flex", alignItems: "center", gap: 4 }}>
+            <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#3B82F6", animation: "pulseGlow 2s infinite" }} />
+            RAG Flow Active
           </div>
         </div>
-        <button onClick={onClose} style={{ marginLeft: "auto", background: "none", border: "none", color: "rgba(255,255,255,0.3)", cursor: "pointer", fontSize: 18, lineHeight: 1 }}>×</button>
+        <button onClick={onClose} style={{ marginLeft: "auto", background: dk ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)", border: "none", borderRadius: 8, width: 28, height: 28, color: dk ? "rgba(255,255,255,0.4)" : "rgba(0,0,0,0.4)", cursor: "pointer" }}>×</button>
       </div>
 
       {/* Messages */}
@@ -457,9 +473,9 @@ function AIChatPanel({ onClose, isDark = true, isMobile = false }) {
           <div key={i} style={{ display: "flex", flexDirection: "column", gap: 6, alignItems: m.type === "user" ? "flex-end" : "flex-start" }}>
             <div style={{
               maxWidth: "85%", padding: "10px 14px", borderRadius: m.type === "user" ? "16px 16px 4px 16px" : "16px 16px 16px 4px",
-              background: m.type === "user" ? "rgba(59,130,246,0.25)" : "rgba(255,255,255,0.05)",
-              border: `1px solid ${m.type === "user" ? "rgba(59,130,246,0.3)" : "rgba(255,255,255,0.06)"}`,
-              fontSize: 13, color: "rgba(255,255,255,0.75)", lineHeight: 1.55,
+              background: m.type === "user" ? "rgba(59,130,246,0.25)" : (dk ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)"),
+              border: `1px solid ${m.type === "user" ? "rgba(59,130,246,0.3)" : (dk ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.06)")}`,
+              fontSize: 13, color: dk ? "rgba(255,255,255,0.8)" : "rgba(0,0,0,0.8)", lineHeight: 1.55,
             }}>
               {m.content}
             </div>
@@ -495,8 +511,9 @@ function AIChatPanel({ onClose, isDark = true, isMobile = false }) {
           onKeyDown={e => e.key === "Enter" && handleSend()}
           placeholder="Ask AI for recommendations..."
           style={{
-            flex: 1, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: 99, padding: "10px 16px", color: "rgba(255,255,255,0.8)", fontSize: 13,
+            flex: 1, background: dk ? "rgba(255,255,255,0.04)" : "rgba(0,0,0,0.04)",
+            border: `1px solid ${dk ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`,
+            borderRadius: 99, padding: "10px 16px", color: dk ? "rgba(255,255,255,0.8)" : "rgba(0,0,0,0.8)", fontSize: 13,
             fontFamily: "'DM Sans', sans-serif",
           }}
         />
@@ -529,6 +546,7 @@ export default function DevStoreDashboard() {
   const [apiOnline, setApiOnline] = useState(null);
   const [errorMsg, setErrorMsg] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isHinglish, setIsHinglish] = useState(false);
   const debounceRef = useRef(null);
   const ghostText = useGhostText(!focused && !query);
 
@@ -548,48 +566,67 @@ export default function DevStoreDashboard() {
   const gridCols = width >= 1200 ? 4 : width >= 1024 ? 3 : width >= 768 ? 2 : 1;
   const pad = isMobile ? 16 : 32;
 
+  // SWR-based trending fetcher
+  const { data: trendingData, error: trendingError, isValidating: trendingLoading } = useSWR(
+    !query ? [`trending`, activeCategory] : null,
+    () => apiService.getTrending({ resource_type: activeCategory === "All" ? null : activeCategory, limit: 40 }),
+    { revalidateOnFocus: false }
+  );
+
   useEffect(() => {
-    const loadAll = async () => {
-      setLoading(true); setErrorMsg("");
-      try {
-        const data = await apiService.getResources({ limit: 50 });
-        const mapped = (Array.isArray(data) ? data : data.resources || data.items || []).map(mapResource);
-        setTools(mapped); setFiltered(mapped); setApiOnline(true);
-      } catch (err) {
-        console.error("Backend offline, using mock data:", err);
-        setApiOnline(false); setErrorMsg("Backend offline — showing demo data");
-        const mocks = [
-          { id: "1", name: "OpenAI GPT-4", resource_type: "API", description: "Advanced language model via REST API", pricing_type: "paid", github_stars: 50000, latency_ms: 320, is_available: true },
-          { id: "2", name: "Gemini 1.5", resource_type: "API", description: "Google's multimodal AI API", pricing_type: "freemium", github_stars: 12000, latency_ms: 280, is_available: true },
-          { id: "3", name: "Razorpay SDK", resource_type: "API", description: "India's leading payment gateway API", pricing_type: "paid", github_stars: 1200, latency_ms: 55, is_available: true },
-          { id: "4", name: "Llama 3 70B", resource_type: "Model", description: "Open-source LLM by Meta, fine-tuned", pricing_type: "free", github_stars: 45000, latency_ms: 180, is_available: true },
-          { id: "5", name: "Mistral 7B", resource_type: "Model", description: "Compact high-performance language model", pricing_type: "free", github_stars: 22000, latency_ms: 95, is_available: true },
-          { id: "6", name: "Stable Diffusion XL", resource_type: "Model", description: "Text-to-image generation model", pricing_type: "free", github_stars: 38000, latency_ms: 420, is_available: false },
-          { id: "7", name: "Common Crawl Hindi", resource_type: "Dataset", description: "Petabyte-scale Hindi web crawl data", pricing_type: "free", downloads: 500000, latency_ms: 0, is_available: true },
-          { id: "8", name: "LAION Indian Art", resource_type: "Dataset", description: "12GB tagged Indian art images", pricing_type: "free", downloads: 120000, latency_ms: 0, is_available: true },
-        ].map(mapResource);
-        setTools(mocks); setFiltered(mocks);
-      } finally { setLoading(false); }
-    };
-    loadAll();
+    if (!query && trendingData) {
+      setFiltered((trendingData.results || []).map(mapResource));
+      setLoading(false);
+      setApiOnline(true); // Assume API is online if trending data is successfully fetched
+    } else if (!query && trendingError) {
+      // Fallback to mock data if trending fetch fails and no query is active
+      console.error("Trending fetch failed, using mock data:", trendingError);
+      setApiOnline(false); setErrorMsg("Backend offline — showing demo data");
+      const mocks = [
+        { id: "1", name: "OpenAI GPT-4", resource_type: "API", description: "Advanced language model via REST API", pricing_type: "paid", github_stars: 50000, latency_ms: 320, is_available: true },
+        { id: "2", name: "Gemini 1.5", resource_type: "API", description: "Google's multimodal AI API", pricing_type: "freemium", github_stars: 12000, latency_ms: 280, is_available: true },
+        { id: "3", name: "Razorpay SDK", resource_type: "API", description: "India's leading payment gateway API", pricing_type: "paid", github_stars: 1200, latency_ms: 55, is_available: true },
+        { id: "4", name: "Llama 3 70B", resource_type: "Model", description: "Open-source LLM by Meta, fine-tuned", pricing_type: "free", github_stars: 45000, latency_ms: 180, is_available: true },
+        { id: "5", name: "Mistral 7B", resource_type: "Model", description: "Compact high-performance language model", pricing_type: "free", github_stars: 22000, latency_ms: 95, is_available: true },
+        { id: "6", name: "Stable Diffusion XL", resource_type: "Model", description: "Text-to-image generation model", pricing_type: "free", github_stars: 38000, latency_ms: 420, is_available: false },
+        { id: "7", name: "Common Crawl Hindi", resource_type: "Dataset", description: "Petabyte-scale Hindi web crawl data", pricing_type: "free", downloads: 500000, latency_ms: 0, is_available: true },
+        { id: "8", name: "LAION Indian Art", resource_type: "Dataset", description: "12GB tagged Indian art images", pricing_type: "free", downloads: 120000, latency_ms: 0, is_available: true },
+      ].map(mapResource);
+      setFiltered(mocks);
+      setLoading(false);
+    }
+  }, [trendingData, trendingError, query, activeCategory]);
+
+  // Initial connectivity check
+  useEffect(() => {
+    apiService.healthCheck().then(() => setApiOnline(true)).catch(() => setApiOnline(false));
   }, []);
 
+  // Search Debounce logic
   useEffect(() => {
     clearTimeout(debounceRef.current);
+    const lq = query.toLowerCase().trim();
+    if (!lq) {
+      // If query is cleared, trending data handles the view
+      setSearchLoading(false); // Ensure search loading is off when not searching
+      return;
+    }
+
+    setSearchLoading(true);
     debounceRef.current = setTimeout(async () => {
-      const lq = query.toLowerCase().trim();
-      if (!lq) { setFiltered(tools.filter(t => activeCategory === "All" || t.category === activeCategory)); return; }
-      setSearchLoading(true);
       try {
-        const resp = await apiService.search(query, { resource_types: activeCategory === "All" ? null : [activeCategory], limit: 20 });
+        const resp = await apiService.search(query, { resource_types: activeCategory === "All" ? null : [activeCategory], limit: 40 });
         setFiltered((resp.results || []).map(mapResource));
-      } catch {
+        setApiOnline(true);
+      } catch (err) {
+        console.error("Search failed:", err);
+        setApiOnline(false);
+        setErrorMsg("Search failed — showing demo data");
+        // Fallback to local filter if backend fails during search
         setFiltered(tools.filter(t => (activeCategory === "All" || t.category === activeCategory) && (t.name.toLowerCase().includes(lq) || t.description.toLowerCase().includes(lq))));
       } finally { setSearchLoading(false); }
-    }, 300);
-  }, [query, activeCategory, tools]);
-
-  useEffect(() => { apiService.healthCheck().then(() => setApiOnline(true)).catch(() => setApiOnline(false)); }, []);
+    }, 400); // Increased debounce to 400ms for better UX
+  }, [query, activeCategory, tools]); // Added 'tools' to dependency array for local fallback
 
   const stableCount = tools.filter(t => t.status === "stable").length;
   const NAV = [
@@ -619,7 +656,15 @@ export default function DevStoreDashboard() {
       <div style={{ width: "100%", padding: "0 12px", display: "flex", flexDirection: "column", gap: 4 }}>
         {NAV.map((n, i) => (
           <Tooltip key={n.key} text={n.tip} position="right">
-            <NavItem iconKey={n.key} label={n.label} active={activeNav === i} isDark={dk} onClick={() => { setActiveNav(i); setActiveCategory(["All", "API", "Model", "Dataset"][i]); setQuery(""); if (isMobile) setSidebarOpen(false); }} />
+            <NavItem iconKey={n.key} label={n.label} active={activeNav === i} isDark={dk}
+              onClick={() => {
+                setActiveNav(i);
+                const mappedCat = ["All", "API", "Model", "Dataset"][i];
+                setActiveCategory(mappedCat);
+                setQuery("");
+                if (isMobile) setSidebarOpen(false);
+              }}
+            />
           </Tooltip>
         ))}
       </div>
@@ -648,8 +693,9 @@ export default function DevStoreDashboard() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fira+Code:wght@400;500&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { overflow-x: hidden; }
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: ${dk ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.1)"}; border-radius: 4px; }
@@ -661,9 +707,11 @@ export default function DevStoreDashboard() {
         .cat-btn:hover { background: ${dk ? "rgba(255,255,255,0.07)" : "rgba(59,130,246,0.15)"} !important; }
         input::placeholder { color: ${dk ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.55)"}; font-style: italic; }
         input:focus, button:focus { outline: none; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
 
-      <div style={{ display: "flex", height: "100vh", width: "100vw", overflow: "hidden", background: dk ? "linear-gradient(135deg,#080c18 0%,#0a1428 50%,#080c18 100%)" : "linear-gradient(135deg,#f0f4ff 0%,#e4ecff 50%,#f0f4ff 100%)", color: dk ? "#fff" : "#1a1a2e", fontFamily: "'DM Sans', sans-serif" }}>
+      <div style={{ display: "flex", height: "100vh", width: "100vw", overflow: "hidden", background: dk ? "#020617" : "#f8fafc", color: dk ? "#fff" : "#1a1a2e", fontFamily: "'DM Sans', sans-serif" }}>
 
         {/* Mobile overlay */}
         {isMobile && sidebarOpen && <div onClick={() => setSidebarOpen(false)} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", zIndex: 40, animation: "fadeIn 0.2s ease" }} />}
@@ -676,7 +724,14 @@ export default function DevStoreDashboard() {
           </aside>
         )}
 
-        <main style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+        <main style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden", position: "relative" }}>
+          {/* Floating Gradient Orbs */}
+          {dk && (
+            <>
+              <div style={{ position: "absolute", width: "40vw", height: "40vw", background: "rgba(59, 130, 246, 0.08)", top: "-10%", left: "-5%", borderRadius: "50%", filter: "blur(120px)", pointerEvents: "none", zIndex: 0 }} />
+              <div style={{ position: "absolute", width: "50vw", height: "50vw", background: "rgba(168, 85, 247, 0.05)", bottom: "-20%", right: "-10%", borderRadius: "50%", filter: "blur(140px)", pointerEvents: "none", zIndex: 0 }} />
+            </>
+          )}
           {/* Top Bar */}
           <header style={{ flexShrink: 0, display: "flex", alignItems: "center", gap: isMobile ? 10 : 16, padding: `14px ${pad}px`, flexWrap: isMobile ? "wrap" : "nowrap", borderBottom: `1px solid ${dk ? "rgba(255,255,255,0.05)" : "rgba(59,130,246,0.1)"}`, background: dk ? "rgba(8,12,24,0.8)" : "rgba(240,244,255,0.8)", backdropFilter: "blur(12px)" }}>
             {isMobile && (
@@ -719,6 +774,17 @@ export default function DevStoreDashboard() {
                   </Tooltip>
                 ))}
               </>}
+              <Tooltip text="Toggle Hinglish Mode" position="bottom">
+                <button onClick={() => setIsHinglish(!isHinglish)} style={{
+                  padding: "0 12px", height: 38, borderRadius: 12, display: "flex", alignItems: "center", gap: 6,
+                  background: isHinglish ? "linear-gradient(135deg, #F59E0B22, #F59E0B0A)" : (dk ? "rgba(255,255,255,0.03)" : "rgba(0,0,0,0.03)"),
+                  border: `1px solid ${isHinglish ? "#F59E0B55" : (dk ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)")}`,
+                  color: isHinglish ? "#F59E0B" : (dk ? "rgba(255,255,255,0.6)" : "rgba(0,0,0,0.6)"),
+                  fontWeight: 700, fontSize: 13, cursor: "pointer", transition: "all 0.3s ease"
+                }}>
+                  🇮🇳 {isHinglish ? "Hinglish: ON" : "Hinglish: OFF"}
+                </button>
+              </Tooltip>
               <Tooltip text={dk ? "Switch to Light mode" : "Switch to Dark mode"} position="bottom">
                 <button onClick={toggleTheme} style={{ width: 38, height: 38, borderRadius: 12, background: dk ? `linear-gradient(135deg,${A}22,${A}0A)` : `linear-gradient(135deg,${A}15,${A}08)`, border: `1px solid ${dk ? `${A}30` : `${A}20`}`, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", color: dk ? AL : A, transition: "all 0.3s ease", boxShadow: `0 2px 8px rgba(59,130,246,0.15)` }}>
                   <Icon d={dk ? Icons.Sun : Icons.Moon} size={16} />
@@ -728,34 +794,66 @@ export default function DevStoreDashboard() {
           </header>
 
           {/* Category Pill Bar */}
-          <div style={{ flexShrink: 0, display: "flex", alignItems: "center", gap: isMobile ? 12 : 8, padding: isMobile ? `14px ${pad}px` : `12px ${pad}px`, borderBottom: `1px solid ${dk ? "rgba(255,255,255,0.04)" : "rgba(59,130,246,0.08)"}`, background: dk ? "rgba(10,15,30,0.6)" : "rgba(234,239,255,0.6)", overflowX: "auto" }}>
-            {CATEGORIES.map(cat => (
-              <Tooltip key={cat} text={`Filter: ${cat === "All" ? "All Types" : cat}`} position="bottom">
-                <button className="cat-btn" onClick={() => { setActiveCategory(cat); setQuery(""); }}
-                  style={{ padding: "7px 16px", borderRadius: 99, fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: 12, cursor: "pointer", flexShrink: 0, transition: "all 0.2s", background: activeCategory === cat ? A : (dk ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.85)"), color: activeCategory === cat ? "#fff" : (dk ? "rgba(255,255,255,0.38)" : "rgba(0,0,0,0.75)"), border: `1px solid ${activeCategory === cat ? A : (dk ? "rgba(255,255,255,0.06)" : "rgba(59,130,246,0.2)")}` }}>
-                  {cat === "All" ? "All Types" : cat}
-                </button>
-              </Tooltip>
-            ))}
-            {errorMsg && <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, color: "rgba(239,68,68,0.7)", padding: "6px 12px", borderRadius: 99, background: "rgba(239,68,68,0.06)", border: "1px solid rgba(239,68,68,0.15)", flexShrink: 0 }}>⚠ {errorMsg}</div>}
-            <div style={{ marginLeft: "auto", flexShrink: 0, display: "flex", alignItems: "center", gap: 5, fontSize: 11.5, color: dk ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.6)" }}>
-              <Icon d={Icons.ChevronR} size={13} />{loading ? "—" : filtered.length} result{filtered.length !== 1 ? "s" : ""}
+          <div className="hide-scroll" style={{ flexShrink: 0, display: "flex", alignItems: "center", gap: isMobile ? 12 : 8, padding: isMobile ? `14px ${pad}px` : `12px ${pad}px`, borderBottom: `1px solid ${dk ? "rgba(255,255,255,0.04)" : "rgba(59,130,246,0.08)"}`, background: dk ? "rgba(10,15,30,0.6)" : "rgba(234,239,255,0.6)", overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, margin: "0 auto", maxWidth: 1600, width: "100%" }}>
+              {CATEGORIES.map(cat => (
+                <Tooltip key={cat} text={`Filter: ${cat === "All" ? "All Types" : cat}`} position="bottom">
+                  <button className="cat-btn" onClick={() => { setActiveCategory(cat); setQuery(""); }}
+                    style={{ padding: "7px 16px", borderRadius: 99, fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: 12, cursor: "pointer", flexShrink: 0, transition: "all 0.2s", background: activeCategory === cat ? A : (dk ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.85)"), color: activeCategory === cat ? "#fff" : (dk ? "rgba(255,255,255,0.38)" : "rgba(0,0,0,0.75)"), border: `1px solid ${activeCategory === cat ? A : (dk ? "rgba(255,255,255,0.06)" : "rgba(59,130,246,0.2)")}` }}>
+                    {cat === "All" ? "All Types" : cat}
+                  </button>
+                </Tooltip>
+              ))}
+              {errorMsg && <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, color: "rgba(239,68,68,0.7)", padding: "6px 12px", borderRadius: 99, background: "rgba(239,68,68,0.06)", border: "1px solid rgba(239,68,68,0.15)", flexShrink: 0 }}>⚠ {errorMsg}</div>}
+              <div style={{ marginLeft: "auto", flexShrink: 0, display: "flex", alignItems: "center", gap: 5, fontSize: 11.5, color: dk ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.6)" }}>
+                <Icon d={Icons.ChevronR} size={13} />{loading ? "—" : filtered.length} result{filtered.length !== 1 ? "s" : ""}
+              </div>
             </div>
           </div>
 
-          {/* Bento Grid */}
-          <div style={{ flex: 1, overflowY: "auto", padding: `24px ${pad}px` }}>
-            <div style={{ display: "grid", gridTemplateColumns: `repeat(${gridCols}, 1fr)`, gap: 16 }}>
-              {loading
-                ? Array.from({ length: 8 }).map((_, i) => <SkeletonCard key={i} index={i} isDark={dk} />)
-                : filtered.length === 0
-                  ? <div style={{ gridColumn: "1/-1", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12, padding: "60px 0" }}>
-                    <div style={{ fontSize: 36 }}>🔍</div>
-                    <div style={{ fontSize: 14, color: dk ? "rgba(255,255,255,0.3)" : "rgba(0,0,0,0.6)" }}>No results for <em>"{query || activeCategory}"</em> via OpenSearch</div>
-                    <button onClick={() => { setQuery(""); setActiveCategory("All"); setActiveNav(0); }} style={{ padding: "8px 20px", borderRadius: 99, border: `1px solid ${A}55`, background: "none", color: A, fontSize: 12, fontWeight: 600, cursor: "pointer", fontFamily: "'DM Sans', sans-serif" }}>Clear filters</button>
-                  </div>
-                  : filtered.map((tool, i) => <ToolCard key={tool.id} tool={tool} index={i} isDark={dk} />)
-              }
+          {/* Bento Grid Container */}
+          <div style={{ flex: 1, overflowY: "auto", overflowX: "hidden", padding: `24px ${pad}px` }}>
+            <div style={{ maxWidth: 1600, margin: "0 auto", width: "100%" }}>
+
+              {/* Intent Discovery Stacked on Mobile */}
+              {isMobile && showChat && (
+                <div style={{ marginBottom: 24, borderRadius: 24, overflow: "hidden", border: `1px solid ${dk ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"}`, background: dk ? "rgba(10,16,32,0.6)" : "rgba(255,255,255,0.6)", backdropFilter: "blur(20px)" }}>
+                  <AIChatPanel onClose={() => setShowChat(false)} isDark={dk} isMobile={isMobile} />
+                </div>
+              )}
+
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: width >= 1100 ? "repeat(12, 1fr)" : (width >= 768 ? "repeat(2, 1fr)" : "1fr"),
+                gap: 20,
+                gridAutoFlow: "dense",
+                position: "relative",
+                zIndex: 10
+              }}>
+                {loading
+                  ? Array.from({ length: 8 }).map((_, i) => (
+                    <div key={i} style={{ gridColumn: width >= 1100 ? (i % 7 === 0 ? "span 6" : "span 3") : "span 1" }}>
+                      <SkeletonCard index={i} isDark={dk} />
+                    </div>
+                  ))
+                  : filtered.length === 0
+                    ? <div style={{ gridColumn: "1/-1", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12, padding: "60px 0" }}>
+                      <div style={{ fontSize: 36 }}>🔍</div>
+                      <div style={{ fontSize: 14, color: dk ? "rgba(255,255,255,0.3)" : "rgba(0,0,0,0.6)" }}>No results found</div>
+                      <button onClick={() => { setQuery(""); setActiveCategory("All"); }} style={{ padding: "8px 20px", borderRadius: 99, border: `1px solid ${A}55`, background: "none", color: A, fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Clear filters</button>
+                    </div>
+                    : filtered.map((tool, i) => {
+                      const isFeatured = i % 7 === 0;
+                      return (
+                        <div key={tool.id} style={{
+                          gridColumn: width >= 1100 ? (isFeatured ? "span 6" : "span 3") : "span 1"
+                        }}>
+                          <ToolCard tool={tool} index={i} isDark={dk} />
+                        </div>
+                      );
+                    })
+                }
+              </div>
             </div>
             <div style={{ marginTop: 32, display: "flex", alignItems: "center", justifyContent: "center", gap: 8, fontSize: 11, color: dk ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.5)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
               <div style={{ width: 5, height: 5, borderRadius: "50%", background: A, animation: "pulseGlow 2s infinite" }} />
@@ -764,8 +862,20 @@ export default function DevStoreDashboard() {
             </div>
           </div>
         </main>
+
+        {/* Intent Discovery Sidebar widget (Desktop) */}
+        {!isMobile && showChat && (
+          <aside style={{
+            width: 400, flexShrink: 0,
+            borderLeft: `1px solid ${dk ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"}`,
+            background: dk ? "rgba(2, 6, 23, 0.7)" : "rgba(255,255,255,0.7)",
+            backdropFilter: "blur(24px)", zIndex: 60,
+            display: "flex", flexDirection: "column"
+          }}>
+            <AIChatPanel onClose={() => setShowChat(false)} isDark={dk} isMobile={isMobile} />
+          </aside>
+        )}
       </div>
-      {showChat && <AIChatPanel onClose={() => setShowChat(false)} isDark={dk} isMobile={isMobile} />}
     </>
   );
 }

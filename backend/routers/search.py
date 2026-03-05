@@ -57,6 +57,7 @@ def get_mock_results(query: str, pricing_filter: Optional[List[str]] = None, res
             'resource_type': 'API',
             'pricing_type': 'paid',
             'score': 0.95,
+            'rank': 1,
             'github_stars': 50000,
             'downloads': 1000000,
             'documentation_url': 'https://platform.openai.com/docs',
@@ -70,6 +71,7 @@ def get_mock_results(query: str, pricing_filter: Optional[List[str]] = None, res
             'resource_type': 'Model',
             'pricing_type': 'free',
             'score': 0.92,
+            'rank': 2,
             'github_stars': 75000,
             'downloads': 2500000,
             'documentation_url': 'https://huggingface.co/docs',
@@ -83,6 +85,7 @@ def get_mock_results(query: str, pricing_filter: Optional[List[str]] = None, res
             'resource_type': 'Dataset',
             'pricing_type': 'free',
             'score': 0.88,
+            'rank': 5,
             'downloads': 500000,
             'documentation_url': 'https://commoncrawl.org',
             'health_status': 'healthy',
@@ -95,6 +98,7 @@ def get_mock_results(query: str, pricing_filter: Optional[List[str]] = None, res
             'resource_type': 'API',
             'pricing_type': 'paid',
             'score': 0.87,
+            'rank': 3,
             'github_stars': 30000,
             'downloads': 500000,
             'documentation_url': 'https://docs.anthropic.com',
@@ -108,6 +112,7 @@ def get_mock_results(query: str, pricing_filter: Optional[List[str]] = None, res
             'resource_type': 'Model',
             'pricing_type': 'free',
             'score': 0.85,
+            'rank': 4,
             'github_stars': 60000,
             'downloads': 1500000,
             'documentation_url': 'https://stability.ai/docs',
@@ -121,6 +126,7 @@ def get_mock_results(query: str, pricing_filter: Optional[List[str]] = None, res
             'resource_type': 'Dataset',
             'pricing_type': 'free',
             'score': 0.82,
+            'rank': 6,
             'downloads': 800000,
             'documentation_url': 'https://www.image-net.org',
             'health_status': 'healthy',
@@ -133,6 +139,7 @@ def get_mock_results(query: str, pricing_filter: Optional[List[str]] = None, res
             'resource_type': 'API',
             'pricing_type': 'paid',
             'score': 0.90,
+            'rank': 7,
             'github_stars': 40000,
             'downloads': 750000,
             'documentation_url': 'https://ai.google.dev/docs',
@@ -146,6 +153,7 @@ def get_mock_results(query: str, pricing_filter: Optional[List[str]] = None, res
             'resource_type': 'Model',
             'pricing_type': 'free',
             'score': 0.89,
+            'rank': 8,
             'github_stars': 85000,
             'downloads': 3000000,
             'documentation_url': 'https://llama.meta.com',
@@ -257,3 +265,33 @@ async def search(request: SearchRequest) -> SearchResponse:
             status_code=500,
             detail=f"Search failed: {str(e)}"
         )
+@router.get("/trending")
+async def trending(
+    resource_type: Optional[str] = None,
+    limit: int = 40
+) -> SearchResponse:
+    """
+    Get trending resources sorted by rank (popularity)
+    """
+    try:
+        # For now, using mock results with sorting
+        results = get_mock_results(query="", limit=100)
+        
+        # Apply type filter if provided
+        if resource_type and resource_type != "All":
+            results = [r for r in results if r['resource_type'] == resource_type]
+            
+        # Sort by rank (ascending: Rank 1 is best)
+        results.sort(key=lambda x: x.get('rank', 999))
+        
+        final_results = results[:limit]
+        
+        return SearchResponse(
+            query="trending",
+            results=final_results,
+            total=len(final_results),
+            source="mock"
+        )
+    except Exception as e:
+        logger.error(f"❌ Trending failed: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
