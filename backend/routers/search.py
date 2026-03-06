@@ -265,6 +265,96 @@ async def search(request: SearchRequest) -> SearchResponse:
             status_code=500,
             detail=f"Search failed: {str(e)}"
         )
+@router.post("/search/intent")
+async def intent_search(request: SearchRequest) -> SearchResponse:
+    """
+    AI-powered intent search using Bedrock embeddings + OpenSearch k-NN
+    
+    Flow:
+    1. Generate embedding for natural language query using Bedrock Titan v2
+    2. Perform k-NN vector search in OpenSearch
+    3. Apply unified ranking algorithm
+    4. Return top 5 results
+    
+    Behavior:
+    - If AWS services configured: Uses real Bedrock + OpenSearch semantic search
+    - Otherwise: Falls back to mock data
+    """
+    try:
+        logger.info(f"🧠 Intent search request: query='{request.query}'")
+        
+        # Try real semantic search if AWS is configured
+        if search_service is not None:
+            try:
+                from services.embeddings import get_embeddings_service
+                
+                logger.info("🌐 Using AWS Bedrock + OpenSearch for semantic search")
+                
+                # Generate embedding for query
+                embeddings_service = get_embeddings_service(model_version="v2")
+                query_embedding = embeddings_service.get_embedding(request.query)
+                
+                # Perform k-NN search
+                from clients.opensearch import OpenSearchClient
+                opensearch_client = OpenSearchClient()
+                
+                # Build filters
+                filters = {}
+                if request.pricing_filter:
+                    filters['pricing_type'] = request.pricing_filter
+                if request.resource_types and 'All' not in request.resource_types:
+                    filters['resource_type'] = request.resource_types
+                
+                # k-NN search
+                knn_results = opensearch_client.knn_search(
+                    query_vector=query_embedding,
+                    k=10,
+                    filters=filters,
+                    size=20
+                )
+                
+                # Rank results using unified ranking algorithm
+                ranked_results = search_service.rank_results(knn_results, query_embedding)
+                
+                # Return top 5
+                top_results = ranked_results[:5]
+                
+                return SearchResponse(
+                    query=request.query,
+                    results=top_results,
+                    total=len(top_results),
+                    intent={"mode": "semantic", "embedding_model": "titan-v2"},
+                    source="aws"
+                )
+                
+            except Exception as e:
+                logger.warning(f"⚠️ AWS semantic search failed, falling back to mock: {e}")
+        
+        # Fallback to mock data
+        logger.info("📦 Using mock data for intent search")
+        results = get_mock_results(
+            query=request.query,
+            pricing_filter=request.pricing_filter,
+            resource_types=request.resource_types,
+            limit=5
+        )
+        
+        return SearchResponse(
+            query=request.query,
+            results=results,
+            total=len(results),
+            intent={"mode": "mock"},
+            source="mock"
+        )
+        
+    except Exception as e:
+        logger.error(f"❌ Intent search failed: {e}", exc_info=True)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Intent search failed: {str(e)}"
+        )
+
+
 @router.get("/trending")
 async def trending(
     resource_type: Optional[str] = None,

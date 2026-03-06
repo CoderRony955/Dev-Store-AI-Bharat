@@ -163,6 +163,66 @@ class OpenSearchClient:
             logger.error(f"Failed to create index '{index_name}': {e}")
             raise OpenSearchClientError(f"Could not create index '{index_name}'") from e
     
+    def create_knn_index(
+        self,
+        index_name: Optional[str] = None,
+        vector_dimension: int = 1024,
+        vector_field: str = "embedding"
+    ) -> bool:
+        """
+        Create an index with k-NN vector search support.
+        
+        Args:
+            index_name: Name of the index (defaults to self.index_name)
+            vector_dimension: Dimension of embedding vectors (1024 for Titan v2)
+            vector_field: Name of the vector field (defaults to "embedding")
+            
+        Returns:
+            True if index was created, False if it already exists
+            
+        Raises:
+            OpenSearchClientError: If index creation fails
+        """
+        settings = {
+            "index": {
+                "knn": True,
+                "knn.algo_param.ef_search": 100
+            }
+        }
+        
+        mapping = {
+            "properties": {
+                vector_field: {
+                    "type": "knn_vector",
+                    "dimension": vector_dimension,
+                    "method": {
+                        "name": "hnsw",
+                        "space_type": "l2",
+                        "engine": "nmslib",
+                        "parameters": {
+                            "ef_construction": 128,
+                            "m": 24
+                        }
+                    }
+                },
+                "name": {"type": "text"},
+                "description": {"type": "text"},
+                "resource_type": {"type": "keyword"},
+                "pricing_type": {"type": "keyword"},
+                "source": {"type": "keyword"},
+                "health_status": {"type": "keyword"},
+                "github_stars": {"type": "integer"},
+                "downloads": {"type": "integer"},
+                "last_updated": {"type": "date"}
+            }
+        }
+        
+        return self.create_index(
+            index_name=index_name,
+            mapping=mapping,
+            settings=settings
+        )
+    
     def delete_index(self, index_name: Optional[str] = None) -> bool:
         """
         Delete an index.

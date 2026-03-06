@@ -1,0 +1,135 @@
+# Multi-Source Data Ingestion Audit - Tasks
+
+## 1. Schema Validation Analysis
+- [ ] 1.1 Review Resource model in `backend/models/domain.py`
+  - [ ] 1.1.1 Document all existing fields
+  - [ ] 1.1.2 Identify metadata JSONB field capabilities
+  - [ ] 1.1.3 Compare against GitHub sample data structure
+  - [ ] 1.1.4 Compare against HuggingFace sample data structure
+  - [ ] 1.1.5 Compare against Kaggle sample data structure
+- [ ] 1.2 Identify missing fields
+  - [ ] 1.2.1 List fields present in samples but missing in model
+  - [ ] 1.2.2 Categorize by data source (GitHub/HF/Kaggle)
+  - [ ] 1.2.3 Assign priority levels (Critical/High/Medium/Low)
+- [ ] 1.3 Assess metadata JSONB field adequacy
+  - [ ] 1.3.1 Verify JSONB can store nested GitHub metadata
+  - [ ] 1.3.2 Verify JSONB can store nested HuggingFace metadata
+  - [ ] 1.3.3 Verify JSONB can store nested Kaggle metadata
+  - [ ] 1.3.4 Document verdict on metadata field readiness
+- [ ] 1.4 Create schema enhancement recommendations
+  - [ ] 1.4.1 Design Option 1: Top-level fields approach
+  - [ ] 1.4.2 Design Option 2: Metadata-only approach
+  - [ ] 1.4.3 Compare pros/cons of each option
+  - [ ] 1.4.4 Provide recommended approach with justification
+- [ ] 1.5 Draft database migration requirements
+  - [ ] 1.5.1 Write SQL for adding new columns
+  - [ ] 1.5.2 Write SQL for creating indexes
+  - [ ] 1.5.3 Write SQL for updating existing records
+  - [ ] 1.5.4 Estimate migration effort and risk
+
+## 2. Intent Search Readiness Analysis
+- [ ] 2.1 Review Bedrock client implementation
+  - [ ] 2.1.1 Verify embedding generation using Titan
+  - [ ] 2.1.2 Verify text generation using Claude 3
+  - [ ] 2.1.3 Check retry logic and error handling
+  - [ ] 2.1.4 Check circuit breaker implementation
+  - [ ] 2.1.5 Document strengths and gaps
+- [ ] 2.2 Review OpenSearch client implementation
+  - [ ] 2.2.1 Verify KNN search capability
+  - [ ] 2.2.2 Check index management functions
+  - [ ] 2.2.3 Check document indexing functions
+  - [ ] 2.2.4 Verify health check implementation
+  - [ ] 2.2.5 Document strengths and gaps
+- [ ] 2.3 Review SearchService orchestration
+  - [ ] 2.3.1 Verify intent extraction flow
+  - [ ] 2.3.2 Verify embedding generation flow
+  - [ ] 2.3.3 Verify filter building logic
+  - [ ] 2.3.4 Verify vector search execution
+  - [ ] 2.3.5 Verify ranking algorithm
+  - [ ] 2.3.6 Check result grouping by type
+  - [ ] 2.3.7 Document complete pipeline assessment
+- [ ] 2.4 Identify search service gaps
+  - [ ] 2.4.1 Check for source-specific filtering support
+  - [ ] 2.4.2 Check metadata access patterns
+  - [ ] 2.4.3 Check field validation logic
+  - [ ] 2.4.4 Categorize gaps by priority
+- [ ] 2.5 Create search enhancement recommendations
+  - [ ] 2.5.1 Design source-specific filtering enhancement
+  - [ ] 2.5.2 Design robust metadata access pattern
+  - [ ] 2.5.3 Design source-specific ranking logic
+  - [ ] 2.5.4 Provide code examples for each enhancement
+- [ ] 2.6 Assess overall search readiness
+  - [ ] 2.6.1 Calculate readiness percentage
+  - [ ] 2.6.2 Provide readiness verdict
+  - [ ] 2.6.3 List required actions for full readiness
+
+## 3. Frontend Data Mapping Analysis
+- [ ] 3.1 Review DevStoreDashboard component
+  - [ ] 3.1.1 Analyze mapResource function
+  - [ ] 3.1.2 Check resource_type to category mapping
+  - [ ] 3.1.3 Check TYPE_META emoji/color mapping
+  - [ ] 3.1.4 Review ToolCard rendering logic
+  - [ ] 3.1.5 Document current strengths
+- [ ] 3.2 Identify frontend rendering gaps
+  - [ ] 3.2.1 Check for source-specific icon rendering
+  - [ ] 3.2.2 Check stars vs downloads handling
+  - [ ] 3.2.3 Check Kaggle usability_rating display
+  - [ ] 3.2.4 Check HuggingFace private/gated badges
+  - [ ] 3.2.5 Check GitHub language badge display
+  - [ ] 3.2.6 Categorize gaps by priority
+- [ ] 3.3 Create frontend enhancement recommendations
+  - [ ] 3.3.1 Design SOURCE_META mapping structure
+  - [ ] 3.3.2 Design source-specific icon rendering
+  - [ ] 3.3.3 Design source-specific metrics rendering
+  - [ ] 3.3.4 Design conditional rendering logic
+  - [ ] 3.3.5 Provide code examples for each enhancement
+- [ ] 3.4 Assess frontend readiness
+  - [ ] 3.4.1 Calculate readiness percentage
+  - [ ] 3.4.2 Provide readiness verdict
+  - [ ] 3.4.3 List required changes for full support
+
+## 4. Gap Analysis Report Compilation
+- [ ] 4.1 Create executive summary
+  - [ ] 4.1.1 Summarize overall readiness status
+  - [ ] 4.1.2 List critical findings
+  - [ ] 4.1.3 Provide high-level recommendations
+- [ ] 4.2 Compile detailed findings
+  - [ ] 4.2.1 Organize schema findings into tables
+  - [ ] 4.2.2 Organize search findings into tables
+  - [ ] 4.2.3 Organize frontend findings into tables
+  - [ ] 4.2.4 Add code examples for each gap
+- [ ] 4.3 Create gap summary tables
+  - [ ] 4.3.1 Create critical gaps table
+  - [ ] 4.3.2 Create high priority gaps table
+  - [ ] 4.3.3 Create medium priority gaps table
+  - [ ] 4.3.4 Add effort estimates for each gap
+- [ ] 4.4 Design implementation roadmap
+  - [ ] 4.4.1 Define Phase 1: Critical fixes
+  - [ ] 4.4.2 Define Phase 2: High priority
+  - [ ] 4.4.3 Define Phase 3: Medium priority
+  - [ ] 4.4.4 Calculate total effort estimate
+- [ ] 4.5 Define testing requirements
+  - [ ] 4.5.1 List schema tests needed
+  - [ ] 4.5.2 List search tests needed
+  - [ ] 4.5.3 List frontend tests needed
+- [ ] 4.6 Write conclusion and recommendations
+  - [ ] 4.6.1 Summarize readiness by component
+  - [ ] 4.6.2 Provide recommended action plan
+  - [ ] 4.6.3 Highlight next steps
+
+## 5. Documentation and Delivery
+- [ ] 5.1 Format gap analysis report
+  - [ ] 5.1.1 Add table of contents
+  - [ ] 5.1.2 Add syntax highlighting to code examples
+  - [ ] 5.1.3 Add visual indicators (✅ ⚠️ ❌)
+  - [ ] 5.1.4 Ensure consistent formatting
+- [ ] 5.2 Review and validate findings
+  - [ ] 5.2.1 Cross-check all gap IDs referenced
+  - [ ] 5.2.2 Verify all code examples are accurate
+  - [ ] 5.2.3 Validate effort estimates
+  - [ ] 5.2.4 Ensure all acceptance criteria met
+- [ ] 5.3 Prepare final deliverable
+  - [ ] 5.3.1 Export report to markdown
+  - [ ] 5.3.2 Create summary presentation (optional)
+  - [ ] 5.3.3 Package all artifacts
+  - [ ] 5.3.4 Deliver to stakeholders

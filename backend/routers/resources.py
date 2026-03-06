@@ -31,6 +31,7 @@ class Category(BaseModel):
 async def list_resources(
     resource_type: Optional[str] = Query(None),
     pricing_type: Optional[str] = Query(None),
+    source: Optional[str] = Query(None, description="Filter by source: github, huggingface, kaggle"),
     limit: int = Query(20, ge=1, le=100),
     offset: int = Query(0, ge=0)
 ) -> List[Resource]:
@@ -43,6 +44,7 @@ async def list_resources(
             description="Advanced language model API",
             resource_type="API",
             pricing_type="paid",
+            source="github",
             github_stars=50000,
             downloads=1000000,
             documentation_url="https://platform.openai.com/docs",
@@ -54,8 +56,10 @@ async def list_resources(
             description="State-of-the-art ML models",
             resource_type="Model",
             pricing_type="free",
+            source="huggingface",
             github_stars=75000,
             downloads=2500000,
+            private=False,
             documentation_url="https://huggingface.co/docs",
             health_status="healthy"
         )
@@ -66,6 +70,8 @@ async def list_resources(
         resources = [r for r in resources if r.resource_type == resource_type]
     if pricing_type:
         resources = [r for r in resources if r.pricing_type == pricing_type]
+    if source:
+        resources = [r for r in resources if r.source == source]
     
     return resources[offset:offset + limit]
 

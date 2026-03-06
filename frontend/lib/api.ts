@@ -37,6 +37,19 @@ class ApiService {
         });
     }
 
+    /** AI Intent search using Bedrock embeddings + k-NN (POST /api/search/intent) */
+    async intentSearch(query: string, filters: Record<string, unknown> = {}) {
+        return this.request<{ results: Resource[] }>("/api/search/intent", {
+            method: "POST",
+            body: JSON.stringify({
+                query,
+                pricing_filter: filters.pricing_filter,
+                resource_types: filters.resource_types,
+                limit: filters.limit || 5,
+            }),
+        });
+    }
+
     /** Get all resources with filters (GET /api/resources) */
     async getResources(filters: ResourceFilters = {}) {
         const params = new URLSearchParams();

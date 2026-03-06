@@ -72,6 +72,13 @@ const TYPE_META = {
   Dataset: { color: "#F59E0B", emoji: "🗄️" },
 };
 
+// Source-specific metadata (GitHub, HuggingFace, Kaggle)
+const SOURCE_META = {
+  github: { icon: "🐙", color: "#333", label: "GitHub" },
+  huggingface: { icon: "🤗", color: "#FFD21E", label: "Hugging Face" },
+  kaggle: { icon: "📊", color: "#20BEFF", label: "Kaggle" },
+};
+
 const PRICING_META = {
   free: { color: "#00FFA3", label: "free" },
   paid: { color: "#3B82F6", label: "paid" },
@@ -92,7 +99,23 @@ const MOCK_TOOLS = [
 // Map a backend resource to ToolCard-compatible shape
 function mapResource(r, index = 0) {
   const meta = TYPE_META[r.resource_type] || { color: "#6B7280", emoji: "📦" };
-  const stars = r.github_stars ?? r.downloads ?? 0;
+  
+  // Detect source from URL if not provided
+  const detectSource = (url) => {
+    if (!url) return 'github';
+    if (url.includes('github.com')) return 'github';
+    if (url.includes('huggingface.co')) return 'huggingface';
+    if (url.includes('kaggle.com')) return 'kaggle';
+    return 'github';
+  };
+  
+  const source = r.source || detectSource(r.source_url);
+  const sourceMeta = SOURCE_META[source] || SOURCE_META.github;
+  
+  // Separate stars and downloads (don't conflate)
+  const stars = r.github_stars || r.stars || 0;
+  const downloads = r.downloads || r.download_count || 0;
+  
   const latencyRaw = parseFloat(r.latency_ms ?? r.p99_latency ?? 0);
   const latency = latencyRaw > 0 ? latencyRaw : Math.floor(Math.random() * 80 + 10);
 
@@ -113,11 +136,18 @@ function mapResource(r, index = 0) {
     latency,
     iconEmoji: meta.emoji,
     status: r.status || (r.is_available !== false ? "stable" : "down"),
-    stars: r.stars || r.github_stars || Math.floor(Math.random() * 5000),
-    downloads: r.downloads || Math.floor(Math.random() * 100000),
+    stars: stars,  // Fixed: separate from downloads
+    downloads: downloads,  // Fixed: separate from stars
     rank: r.rank || (typeof index === 'number' && index < 10 ? index + 1 : 0),
     accentColor: meta.color,
     docsUrl: r.docs_url || "https://docs.example.com",
+    source: source,  // NEW: data source
+    sourceIcon: sourceMeta.icon,  // NEW: source icon
+    sourceColor: sourceMeta.color,  // NEW: source color
+    sourceLabel: sourceMeta.label,  // NEW: source label
+    language: r.language || r.metadata?.language,  // NEW: programming language
+    private: r.private || r.metadata?.private,  // NEW: privacy status
+    gated: r.gated || r.metadata?.gated,  // NEW: access restriction
   };
 }
 

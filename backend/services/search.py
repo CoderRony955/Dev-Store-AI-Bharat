@@ -167,6 +167,7 @@ JSON:"""
         query: str,
         pricing_filter: Optional[List[str]] = None,
         resource_types: Optional[List[str]] = None,
+        sources: Optional[List[str]] = None,
         limit: int = 20
     ) -> Dict[str, Any]:
         """
@@ -176,6 +177,7 @@ JSON:"""
             query: Natural language search query
             pricing_filter: Filter by pricing type (free, paid)
             resource_types: Filter by resource types (API, Model, Dataset)
+            sources: Filter by data source (github, huggingface, kaggle)
             limit: Maximum number of results
             
         Returns:
@@ -200,6 +202,9 @@ JSON:"""
             filters['resource_type'] = resource_types
         elif intent.get('resource_types'):
             filters['resource_type'] = intent['resource_types']
+        
+        if sources:
+            filters['source'] = sources
         
         # Step 4: Vector search
         results = self.vector_search(

@@ -49,11 +49,15 @@ class Resource(BaseModel):
         long_description: Detailed description (optional)
         pricing_type: Pricing model
         price_details: Pricing information (optional)
+        source: Data source (github, huggingface, kaggle)
         source_url: URL to the resource
         documentation_url: URL to documentation (optional)
         github_stars: Number of GitHub stars (optional)
         download_count: Number of downloads (optional)
         active_users: Number of active users (optional)
+        language: Programming language (optional, for GitHub)
+        private: Privacy status (optional, for HuggingFace)
+        gated: Access restriction (optional, for HuggingFace)
         health_status: Current health status
         last_health_check: Timestamp of last health check (optional)
         created_at: Creation timestamp
@@ -72,11 +76,15 @@ class Resource(BaseModel):
     long_description: Optional[str] = None
     pricing_type: PricingType
     price_details: Optional[Dict[str, Any]] = None
+    source: str = Field(default="github", description="Data source: github, huggingface, kaggle")
     source_url: str = Field(..., pattern=r'^https?://')
     documentation_url: Optional[str] = Field(None, pattern=r'^https?://')
     github_stars: Optional[int] = Field(None, ge=0)
     download_count: Optional[int] = Field(None, ge=0)
     active_users: Optional[int] = Field(None, ge=0)
+    language: Optional[str] = Field(None, max_length=100, description="Programming language (GitHub)")
+    private: Optional[bool] = Field(None, description="Privacy status (HuggingFace)")
+    gated: Optional[bool] = Field(None, description="Access restriction (HuggingFace)")
     health_status: HealthStatus = HealthStatus.HEALTHY
     last_health_check: Optional[datetime] = None
     created_at: datetime
