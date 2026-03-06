@@ -61,7 +61,7 @@
     display: flex;
     flex-direction: column;
     z-index: 50;
-    overflow: hidden;
+    overflow: visible;
     transition: width 350ms var(--ds-ease);
     position: relative;
 }
@@ -117,7 +117,7 @@
     background: var(--ds-bg-elevated);
     border: 1px solid rgba(255, 255, 255, 0.2); cursor: pointer;
     display: flex; align-items: center; justify-content: center;
-    color: var(--ds-text-primary); z-index: 60;
+    color: var(--ds-text-primary); z-index: 100;
     transition: all var(--ds-duration-fast) var(--ds-ease);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
