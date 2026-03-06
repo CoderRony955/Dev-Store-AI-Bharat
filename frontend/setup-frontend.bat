@@ -4,7 +4,7 @@ chcp 65001 >nul
 
 :: ╔══════════════════════════════════════════════════════════════════╗
 :: ║          DevStore AI Bharat — Frontend Setup Script             ║
-:: ║          Next.js 14 + AWS Bedrock + OpenSearch                  ║
+:: ║          Next.js 16 + AWS Bedrock + OpenSearch                  ║
 :: ╚══════════════════════════════════════════════════════════════════╝
 
 echo.
