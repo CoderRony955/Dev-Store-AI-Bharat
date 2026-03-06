@@ -1,0 +1,2402 @@
+[
+  {
+    "name": "screen-time-sleep-and-stress-analysis-dataset",
+    "description": "Screen Time, Sleep & Stress Analysis Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/amar5693/screen-time-sleep-and-stress-analysis-dataset",
+    "author": "amar5693",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/amar5693/screen-time-sleep-and-stress-analysis-dataset",
+    "metadata": {
+      "ref": "amar5693/screen-time-sleep-and-stress-analysis-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "student-performance-dataset",
+    "description": "Student Performance Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/amar5693/student-performance-dataset",
+    "author": "amar5693",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/amar5693/student-performance-dataset",
+    "metadata": {
+      "ref": "amar5693/student-performance-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "bmw-global-automotive-sales",
+    "description": "BMW Global Automotive Sales",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/dmahajanbe23/bmw-global-automotive-sales",
+    "author": "dmahajanbe23",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/dmahajanbe23/bmw-global-automotive-sales",
+    "metadata": {
+      "ref": "dmahajanbe23/bmw-global-automotive-sales",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "middle-east-economy-and-oil-prices-19902024",
+    "description": "🌍 Middle East Economy & Oil Prices (1990–2024)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/meharshanali/middle-east-economy-and-oil-prices-19902024",
+    "author": "meharshanali",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/meharshanali/middle-east-economy-and-oil-prices-19902024",
+    "metadata": {
+      "ref": "meharshanali/middle-east-economy-and-oil-prices-19902024",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "top-100-cities-by-population-2026",
+    "description": "Top 100 Cities by Population 2026",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/mafaqbhatti/top-100-cities-by-population-2026",
+    "author": "mafaqbhatti",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/mafaqbhatti/top-100-cities-by-population-2026",
+    "metadata": {
+      "ref": "mafaqbhatti/top-100-cities-by-population-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "amazon-sales-dataset",
+    "description": "Amazon_Sales_Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/aliiihussain/amazon-sales-dataset",
+    "author": "aliiihussain",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/aliiihussain/amazon-sales-dataset",
+    "metadata": {
+      "ref": "aliiihussain/amazon-sales-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "war-economic-and-livelihood-impact-dataset",
+    "description": "War Economic & Livelihood Impact Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/likithagedipudi/war-economic-and-livelihood-impact-dataset",
+    "author": "likithagedipudi",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/likithagedipudi/war-economic-and-livelihood-impact-dataset",
+    "metadata": {
+      "ref": "likithagedipudi/war-economic-and-livelihood-impact-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "online-vs-in-store-shopping-behaviour-dataset",
+    "description": "Online vs In-Store Shopping Behaviour Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/shree0910/online-vs-in-store-shopping-behaviour-dataset",
+    "author": "shree0910",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/shree0910/online-vs-in-store-shopping-behaviour-dataset",
+    "metadata": {
+      "ref": "shree0910/online-vs-in-store-shopping-behaviour-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "starbucks-customer-ordering-patterns",
+    "description": "Starbucks Customer Ordering Patterns",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/likithagedipudi/starbucks-customer-ordering-patterns",
+    "author": "likithagedipudi",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/likithagedipudi/starbucks-customer-ordering-patterns",
+    "metadata": {
+      "ref": "likithagedipudi/starbucks-customer-ordering-patterns",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "heart-decices",
+    "description": "Heart Disease Prediction Using Machine Learning",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/algozee/heart-decices",
+    "author": "algozee",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/algozee/heart-decices",
+    "metadata": {
+      "ref": "algozee/heart-decices",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "college-students-habits-and-performance",
+    "description": "College Students Habits & Performance",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/sharmajicoder/college-students-habits-and-performance",
+    "author": "sharmajicoder",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/sharmajicoder/college-students-habits-and-performance",
+    "metadata": {
+      "ref": "sharmajicoder/college-students-habits-and-performance",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "student-dropout-prediction-dataset",
+    "description": "📄 Student Dropout Prediction Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/meharshanali/student-dropout-prediction-dataset",
+    "author": "meharshanali",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/meharshanali/student-dropout-prediction-dataset",
+    "metadata": {
+      "ref": "meharshanali/student-dropout-prediction-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "student-productivity-and-behavior-dataset-20k",
+    "description": "Student Productivity & Behavior Dataset (20K)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/algozee/student-productivity-and-behavior-dataset-20k",
+    "author": "algozee",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/algozee/student-productivity-and-behavior-dataset-20k",
+    "metadata": {
+      "ref": "algozee/student-productivity-and-behavior-dataset-20k",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "student-exam-performance-dataset-analysis",
+    "description": "Student Exam Performance Dataset Analysis",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/grandmaster07/student-exam-performance-dataset-analysis",
+    "author": "grandmaster07",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/grandmaster07/student-exam-performance-dataset-analysis",
+    "metadata": {
+      "ref": "grandmaster07/student-exam-performance-dataset-analysis",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "youtube-trending-videos-stats-2026",
+    "description": "YouTube Trending Videos Stats 2026",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/bsthere/youtube-trending-videos-stats-2026",
+    "author": "bsthere",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/bsthere/youtube-trending-videos-stats-2026",
+    "metadata": {
+      "ref": "bsthere/youtube-trending-videos-stats-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "ai-worker-burnout-and-attrition-risk-dataset",
+    "description": "AI Worker Burnout & Attrition Risk Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/nudratabbas/ai-worker-burnout-and-attrition-risk-dataset",
+    "author": "nudratabbas",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/nudratabbas/ai-worker-burnout-and-attrition-risk-dataset",
+    "metadata": {
+      "ref": "nudratabbas/ai-worker-burnout-and-attrition-risk-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "apple-global-product-sales-dataset",
+    "description": "Apple Global Product Sales Dataset 🍎",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/ashyou09/apple-global-product-sales-dataset",
+    "author": "ashyou09",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/ashyou09/apple-global-product-sales-dataset",
+    "metadata": {
+      "ref": "ashyou09/apple-global-product-sales-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "amazon-sales-analysis-cleaned-data",
+    "description": "Amazon Sales Analysis- Cleaned Data",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/litonislam/amazon-sales-analysis-cleaned-data",
+    "author": "litonislam",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/litonislam/amazon-sales-analysis-cleaned-data",
+    "metadata": {
+      "ref": "litonislam/amazon-sales-analysis-cleaned-data",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "ev-battery-qc-synthetic-defect-dataset",
+    "description": "EV Battery QC: Synthetic Defect Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/kanchana1990/ev-battery-qc-synthetic-defect-dataset",
+    "author": "kanchana1990",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/kanchana1990/ev-battery-qc-synthetic-defect-dataset",
+    "metadata": {
+      "ref": "kanchana1990/ev-battery-qc-synthetic-defect-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "u-s-top-50-universities-2004-2026",
+    "description": "U.S. Top 50 Universities 2004_2026",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/nalisha/u-s-top-50-universities-2004-2026",
+    "author": "nalisha",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/nalisha/u-s-top-50-universities-2004-2026",
+    "metadata": {
+      "ref": "nalisha/u-s-top-50-universities-2004-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:56.901180"
+  },
+  {
+    "name": "spotify-tracks-dataset",
+    "description": "Spotify Tracks Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/yashdev01/spotify-tracks-dataset",
+    "author": "yashdev01",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/yashdev01/spotify-tracks-dataset",
+    "metadata": {
+      "ref": "yashdev01/spotify-tracks-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "llm-benchmark-wars-2025-2026-24-models-compared",
+    "description": "LLM Benchmark Wars 2025-2026 | 24 Models Compared",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/alitaqishah/llm-benchmark-wars-2025-2026-24-models-compared",
+    "author": "alitaqishah",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/alitaqishah/llm-benchmark-wars-2025-2026-24-models-compared",
+    "metadata": {
+      "ref": "alitaqishah/llm-benchmark-wars-2025-2026-24-models-compared",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "coca-cola-ko-stock-prices-19802026",
+    "description": "Coca-Cola (KO) Stock Prices 1980–2026",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/ibrahimshahrukh/coca-cola-ko-stock-prices-19802026",
+    "author": "ibrahimshahrukh",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/ibrahimshahrukh/coca-cola-ko-stock-prices-19802026",
+    "metadata": {
+      "ref": "ibrahimshahrukh/coca-cola-ko-stock-prices-19802026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "mobile-sales-data",
+    "description": "Mobile sales data",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/syedaeman2212/mobile-sales-data",
+    "author": "syedaeman2212",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/syedaeman2212/mobile-sales-data",
+    "metadata": {
+      "ref": "syedaeman2212/mobile-sales-data",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "student-placement-prediction-dataset",
+    "description": "Student Placement Prediction Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/amar5693/student-placement-prediction-dataset",
+    "author": "amar5693",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/amar5693/student-placement-prediction-dataset",
+    "metadata": {
+      "ref": "amar5693/student-placement-prediction-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "gaming-and-mental-health",
+    "description": "Gaming and Mental Health",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/shaistashahid/gaming-and-mental-health",
+    "author": "shaistashahid",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/shaistashahid/gaming-and-mental-health",
+    "metadata": {
+      "ref": "shaistashahid/gaming-and-mental-health",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "ikea-global-product-catalog-and-price-2026",
+    "description": "IKEA Global Product Catalog (46 Countries) - 2026",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/ranjithpanicker/ikea-global-product-catalog-and-price-2026",
+    "author": "ranjithpanicker",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/ranjithpanicker/ikea-global-product-catalog-and-price-2026",
+    "metadata": {
+      "ref": "ranjithpanicker/ikea-global-product-catalog-and-price-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "gaming-laptops-2026",
+    "description": "Gaming Laptops 2026",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/kanchana1990/gaming-laptops-2026",
+    "author": "kanchana1990",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/kanchana1990/gaming-laptops-2026",
+    "metadata": {
+      "ref": "kanchana1990/gaming-laptops-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "top-100-ai-tools-2026",
+    "description": "Top 500 AI Tools 2026",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/nudratabbas/top-100-ai-tools-2026",
+    "author": "nudratabbas",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/nudratabbas/top-100-ai-tools-2026",
+    "metadata": {
+      "ref": "nudratabbas/top-100-ai-tools-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "global-ai-and-data-jobs-salary-dataset",
+    "description": "Global AI & Data Jobs Salary Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/mohankrishnathalla/global-ai-and-data-jobs-salary-dataset",
+    "author": "mohankrishnathalla",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/mohankrishnathalla/global-ai-and-data-jobs-salary-dataset",
+    "metadata": {
+      "ref": "mohankrishnathalla/global-ai-and-data-jobs-salary-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "toyota-stock-prices-1980-2026-historical-data",
+    "description": "Toyota Stock Prices: 1980-2026 Historical Data",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/omarshahrukh/toyota-stock-prices-1980-2026-historical-data",
+    "author": "omarshahrukh",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/omarshahrukh/toyota-stock-prices-1980-2026-historical-data",
+    "metadata": {
+      "ref": "omarshahrukh/toyota-stock-prices-1980-2026-historical-data",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "traffic-violation-detection-dataset",
+    "description": "Traffic Violation Detection Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/guisahanes/traffic-violation-detection-dataset",
+    "author": "guisahanes",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/guisahanes/traffic-violation-detection-dataset",
+    "metadata": {
+      "ref": "guisahanes/traffic-violation-detection-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "wine-reviews",
+    "description": "Wine Reviews",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/zynicide/wine-reviews",
+    "author": "zynicide",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/zynicide/wine-reviews",
+    "metadata": {
+      "ref": "zynicide/wine-reviews",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "student-productivity-and-digital-distraction-dataset",
+    "description": "Student Productivity & Digital Distraction Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/sehaj1104/student-productivity-and-digital-distraction-dataset",
+    "author": "sehaj1104",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/sehaj1104/student-productivity-and-digital-distraction-dataset",
+    "metadata": {
+      "ref": "sehaj1104/student-productivity-and-digital-distraction-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "chess",
+    "description": "Chess Game Dataset (Lichess)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/datasnaek/chess",
+    "author": "datasnaek",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/datasnaek/chess",
+    "metadata": {
+      "ref": "datasnaek/chess",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "powerlifting-database",
+    "description": "powerlifting-database",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/dansbecker/powerlifting-database",
+    "author": "dansbecker",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/dansbecker/powerlifting-database",
+    "metadata": {
+      "ref": "dansbecker/powerlifting-database",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "porsche-ag-historical-stock-prices-2022-2026",
+    "description": "Porsche AG Historical Stock Prices (2022-2026)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/sanaijlalshahrukh/porsche-ag-historical-stock-prices-2022-2026",
+    "author": "sanaijlalshahrukh",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/sanaijlalshahrukh/porsche-ag-historical-stock-prices-2022-2026",
+    "metadata": {
+      "ref": "sanaijlalshahrukh/porsche-ag-historical-stock-prices-2022-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "ramen-ratings",
+    "description": "Ramen Ratings",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/residentmario/ramen-ratings",
+    "author": "residentmario",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/residentmario/ramen-ratings",
+    "metadata": {
+      "ref": "residentmario/ramen-ratings",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "pitchfork-data",
+    "description": "18,393 Pitchfork Reviews",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/nolanbconaway/pitchfork-data",
+    "author": "nolanbconaway",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/nolanbconaway/pitchfork-data",
+    "metadata": {
+      "ref": "nolanbconaway/pitchfork-data",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.604321"
+  },
+  {
+    "name": "youtube-new",
+    "description": "Trending YouTube Video Statistics",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/datasnaek/youtube-new",
+    "author": "datasnaek",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/datasnaek/youtube-new",
+    "metadata": {
+      "ref": "datasnaek/youtube-new",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:57:58.605309"
+  },
+  {
+    "name": "kepler-exoplanet-search-results",
+    "description": "Kepler Exoplanet Search Results",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/nasa/kepler-exoplanet-search-results",
+    "author": "nasa",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/nasa/kepler-exoplanet-search-results",
+    "metadata": {
+      "ref": "nasa/kepler-exoplanet-search-results",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "publicassistance",
+    "description": "US Public Food Assistance 1 - WIC",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/jpmiller/publicassistance",
+    "author": "jpmiller",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/jpmiller/publicassistance",
+    "metadata": {
+      "ref": "jpmiller/publicassistance",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "188-million-us-wildfires",
+    "description": "1.88 Million US Wildfires",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/rtatman/188-million-us-wildfires",
+    "author": "rtatman",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/rtatman/188-million-us-wildfires",
+    "metadata": {
+      "ref": "rtatman/188-million-us-wildfires",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "things-on-reddit",
+    "description": "Things on Reddit",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/residentmario/things-on-reddit",
+    "author": "residentmario",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/residentmario/things-on-reddit",
+    "metadata": {
+      "ref": "residentmario/things-on-reddit",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "gaming-and-mental-health",
+    "description": "Gaming and Mental Health",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/sharmajicoder/gaming-and-mental-health",
+    "author": "sharmajicoder",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/sharmajicoder/gaming-and-mental-health",
+    "metadata": {
+      "ref": "sharmajicoder/gaming-and-mental-health",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "melbourne-housing-snapshot",
+    "description": "Melbourne Housing Snapshot",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot",
+    "author": "dansbecker",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot",
+    "metadata": {
+      "ref": "dansbecker/melbourne-housing-snapshot",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "customer-support-tickets-dataset-200k-records",
+    "description": "Customer Support Tickets Dataset (200K+ Records)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/mirzayasirabdullah07/customer-support-tickets-dataset-200k-records",
+    "author": "mirzayasirabdullah07",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/mirzayasirabdullah07/customer-support-tickets-dataset-200k-records",
+    "metadata": {
+      "ref": "mirzayasirabdullah07/customer-support-tickets-dataset-200k-records",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "ai-job-replacement-and-skill-shift-dataset",
+    "description": "AI Job Replacement & Skill Shift Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/dmahajanbe23/ai-job-replacement-and-skill-shift-dataset",
+    "author": "dmahajanbe23",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/dmahajanbe23/ai-job-replacement-and-skill-shift-dataset",
+    "metadata": {
+      "ref": "dmahajanbe23/ai-job-replacement-and-skill-shift-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "amazon-stock-data-2025",
+    "description": "Amazon Stock Data 2025",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/muqaddasejaz/amazon-stock-data-2025",
+    "author": "muqaddasejaz",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/muqaddasejaz/amazon-stock-data-2025",
+    "metadata": {
+      "ref": "muqaddasejaz/amazon-stock-data-2025",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "credit-risk-and-loan-default-analysis-dataset",
+    "description": "Credit Risk & Loan Default Analysis Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/algozee/credit-risk-and-loan-default-analysis-dataset",
+    "author": "algozee",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/algozee/credit-risk-and-loan-default-analysis-dataset",
+    "metadata": {
+      "ref": "algozee/credit-risk-and-loan-default-analysis-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "psychological-manipulation-conversations-dataset",
+    "description": "Psychological Manipulation Conversations Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/tatheerabbas/psychological-manipulation-conversations-dataset",
+    "author": "tatheerabbas",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/tatheerabbas/psychological-manipulation-conversations-dataset",
+    "metadata": {
+      "ref": "tatheerabbas/psychological-manipulation-conversations-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "chocolate-sales",
+    "description": "Chocolate Sales",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/saidaminsaidaxmadov/chocolate-sales",
+    "author": "saidaminsaidaxmadov",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/saidaminsaidaxmadov/chocolate-sales",
+    "metadata": {
+      "ref": "saidaminsaidaxmadov/chocolate-sales",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "student-placement-prediction-dataset",
+    "description": "Student Placement Prediction Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/suhanigupta04/student-placement-prediction-dataset",
+    "author": "suhanigupta04",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/suhanigupta04/student-placement-prediction-dataset",
+    "metadata": {
+      "ref": "suhanigupta04/student-placement-prediction-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "global-student-placement-2025-dataset",
+    "description": "Global Student Placement & Salary Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/rakesh630/global-student-placement-2025-dataset",
+    "author": "rakesh630",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/rakesh630/global-student-placement-2025-dataset",
+    "metadata": {
+      "ref": "rakesh630/global-student-placement-2025-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "university-student-performance-and-habits-dataset",
+    "description": "University Student Performance & Habits Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/robiulhasanjisan/university-student-performance-and-habits-dataset",
+    "author": "robiulhasanjisan",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/robiulhasanjisan/university-student-performance-and-habits-dataset",
+    "metadata": {
+      "ref": "robiulhasanjisan/university-student-performance-and-habits-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "global-llm-benchmark-dataset-20242026",
+    "description": "Global LLM Benchmark Dataset (2024–2026)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/dhrubangtalukdar/global-llm-benchmark-dataset-20242026",
+    "author": "dhrubangtalukdar",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/dhrubangtalukdar/global-llm-benchmark-dataset-20242026",
+    "metadata": {
+      "ref": "dhrubangtalukdar/global-llm-benchmark-dataset-20242026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "cs-students-performance-dataset",
+    "description": "CS Students Performance Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/zahranusratt/cs-students-performance-dataset",
+    "author": "zahranusratt",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/zahranusratt/cs-students-performance-dataset",
+    "metadata": {
+      "ref": "zahranusratt/cs-students-performance-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "chicago-crime-dataset-2024-2026",
+    "description": "Chicago Crime Dataset 2024-2026",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/aliafzal9323/chicago-crime-dataset-2024-2026",
+    "author": "aliafzal9323",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/aliafzal9323/chicago-crime-dataset-2024-2026",
+    "metadata": {
+      "ref": "aliafzal9323/chicago-crime-dataset-2024-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "bmw-global-sales-and-market-data",
+    "description": "BMW Global Sales & Market Data",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/payaldhokane/bmw-global-sales-and-market-data",
+    "author": "payaldhokane",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/payaldhokane/bmw-global-sales-and-market-data",
+    "metadata": {
+      "ref": "payaldhokane/bmw-global-sales-and-market-data",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "india-job-market-and-salary-trends-2026",
+    "description": "India Job Market & Salary Trends 2026",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/amar5693/india-job-market-and-salary-trends-2026",
+    "author": "amar5693",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/amar5693/india-job-market-and-salary-trends-2026",
+    "metadata": {
+      "ref": "amar5693/india-job-market-and-salary-trends-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:00.141174"
+  },
+  {
+    "name": "rare-diseases-orphadata-2026",
+    "description": "Rare Diseases - Orphadata 2026",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/ahsanneural/rare-diseases-orphadata-2026",
+    "author": "ahsanneural",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/ahsanneural/rare-diseases-orphadata-2026",
+    "metadata": {
+      "ref": "ahsanneural/rare-diseases-orphadata-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "student-placement-prediction-dataset-2026",
+    "description": "Student Placement Prediction Dataset 2026",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/sehaj1104/student-placement-prediction-dataset-2026",
+    "author": "sehaj1104",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/sehaj1104/student-placement-prediction-dataset-2026",
+    "metadata": {
+      "ref": "sehaj1104/student-placement-prediction-dataset-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "colorado-real-estate-market-2026",
+    "description": "Colorado Real Estate Market 2026",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/kanchana1990/colorado-real-estate-market-2026",
+    "author": "kanchana1990",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/kanchana1990/colorado-real-estate-market-2026",
+    "metadata": {
+      "ref": "kanchana1990/colorado-real-estate-market-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "mobile-price-classification",
+    "description": "Mobile Price Classification",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/iabhishekofficial/mobile-price-classification",
+    "author": "iabhishekofficial",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/iabhishekofficial/mobile-price-classification",
+    "metadata": {
+      "ref": "iabhishekofficial/mobile-price-classification",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "mental-health-disorder-risk-assessment-dataset",
+    "description": "Mental Health Disorder Risk Assessment Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/algozee/mental-health-disorder-risk-assessment-dataset",
+    "author": "algozee",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/algozee/mental-health-disorder-risk-assessment-dataset",
+    "metadata": {
+      "ref": "algozee/mental-health-disorder-risk-assessment-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "japan-birth-statistics-18992023",
+    "description": "Japan Birth Statistics (1899–2023)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/hideos/japan-birth-statistics-18992023",
+    "author": "hideos",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/hideos/japan-birth-statistics-18992023",
+    "metadata": {
+      "ref": "hideos/japan-birth-statistics-18992023",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "global-tech-giants-fundamentals-and-valuations-2026",
+    "description": "Global Tech Giants: Fundamentals & Valuations 2026",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/kanchana1990/global-tech-giants-fundamentals-and-valuations-2026",
+    "author": "kanchana1990",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/kanchana1990/global-tech-giants-fundamentals-and-valuations-2026",
+    "metadata": {
+      "ref": "kanchana1990/global-tech-giants-fundamentals-and-valuations-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "mimic-iv-style-icu-dataset-for-sepsis-prediction",
+    "description": "MIMIC-IV Style ICU Dataset for Sepsis Prediction",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/sinanshereef/mimic-iv-style-icu-dataset-for-sepsis-prediction",
+    "author": "sinanshereef",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/sinanshereef/mimic-iv-style-icu-dataset-for-sepsis-prediction",
+    "metadata": {
+      "ref": "sinanshereef/mimic-iv-style-icu-dataset-for-sepsis-prediction",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "imdb-dataset",
+    "description": "IMDb Top 1000 Movies Dataset (Ratings, Cast, Genre",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/debanganghosh/imdb-dataset",
+    "author": "debanganghosh",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/debanganghosh/imdb-dataset",
+    "metadata": {
+      "ref": "debanganghosh/imdb-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "ai-resume-screening-and-job-market-dataset-2026",
+    "description": "AI Resume Screening & Job Market Dataset (2026)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/aminasalamt/ai-resume-screening-and-job-market-dataset-2026",
+    "author": "aminasalamt",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/aminasalamt/ai-resume-screening-and-job-market-dataset-2026",
+    "metadata": {
+      "ref": "aminasalamt/ai-resume-screening-and-job-market-dataset-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "top-50-universities-in-the-u-s-forbes-2026",
+    "description": "Top 50 Universities in the U.S. (Forbes 2026)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/nudratabbas/top-50-universities-in-the-u-s-forbes-2026",
+    "author": "nudratabbas",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/nudratabbas/top-50-universities-in-the-u-s-forbes-2026",
+    "metadata": {
+      "ref": "nudratabbas/top-50-universities-in-the-u-s-forbes-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "digital-payment-fraud-detection-benchmark",
+    "description": "Digital Payment Fraud Detection Benchmark Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/rohit8527kmr7518/digital-payment-fraud-detection-benchmark",
+    "author": "rohit8527kmr7518",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/rohit8527kmr7518/digital-payment-fraud-detection-benchmark",
+    "metadata": {
+      "ref": "rohit8527kmr7518/digital-payment-fraud-detection-benchmark",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "retail-business-analytics-dataset-10k-orders",
+    "description": "Retail Business Analytics Dataset (10K+ Orders)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/amar5693/retail-business-analytics-dataset-10k-orders",
+    "author": "amar5693",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/amar5693/retail-business-analytics-dataset-10k-orders",
+    "metadata": {
+      "ref": "amar5693/retail-business-analytics-dataset-10k-orders",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "online-retail-customer-classification-dataset",
+    "description": "Online Retail Customer Segmentation Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/rohit8527kmr7518/online-retail-customer-classification-dataset",
+    "author": "rohit8527kmr7518",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/rohit8527kmr7518/online-retail-customer-classification-dataset",
+    "metadata": {
+      "ref": "rohit8527kmr7518/online-retail-customer-classification-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "student-academic-performance-analysis-dataset",
+    "description": "Student Academic Performance Analysis Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/emanfatima2/student-academic-performance-analysis-dataset",
+    "author": "emanfatima2",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/emanfatima2/student-academic-performance-analysis-dataset",
+    "metadata": {
+      "ref": "emanfatima2/student-academic-performance-analysis-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "us-domestic-airline-airfare-dataset-20082025",
+    "description": "US Domestic Airline Airfare Dataset 2008–2025",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/aliafzal9323/us-domestic-airline-airfare-dataset-20082025",
+    "author": "aliafzal9323",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/aliafzal9323/us-domestic-airline-airfare-dataset-20082025",
+    "metadata": {
+      "ref": "aliafzal9323/us-domestic-airline-airfare-dataset-20082025",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "urbansound8k-csv",
+    "description": "UrbanSound8K_CSV",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/amineipad/urbansound8k-csv",
+    "author": "amineipad",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/amineipad/urbansound8k-csv",
+    "metadata": {
+      "ref": "amineipad/urbansound8k-csv",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "multi-brand-marketing-campaign-performance-dataset",
+    "description": "Multi-Brand Marketing Campaign Performance Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/sshriya08/multi-brand-marketing-campaign-performance-dataset",
+    "author": "sshriya08",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/sshriya08/multi-brand-marketing-campaign-performance-dataset",
+    "metadata": {
+      "ref": "sshriya08/multi-brand-marketing-campaign-performance-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "premier-league-2024-2025-data",
+    "description": "Premier League 2024-2025 Data",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/furkanark/premier-league-2024-2025-data",
+    "author": "furkanark",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/furkanark/premier-league-2024-2025-data",
+    "metadata": {
+      "ref": "furkanark/premier-league-2024-2025-data",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "order-delivery-dataset",
+    "description": "Order Delivery Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/waddahali/order-delivery-dataset",
+    "author": "waddahali",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/waddahali/order-delivery-dataset",
+    "metadata": {
+      "ref": "waddahali/order-delivery-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:01.665935"
+  },
+  {
+    "name": "e-commerce-customer-churn-prediction-dataset",
+    "description": "E-commerce Customer Churn Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/vishardmehta/e-commerce-customer-churn-prediction-dataset",
+    "author": "vishardmehta",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/vishardmehta/e-commerce-customer-churn-prediction-dataset",
+    "metadata": {
+      "ref": "vishardmehta/e-commerce-customer-churn-prediction-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "valentine-spending-dataset",
+    "description": "Valentine Spending Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/aminasalamt/valentine-spending-dataset",
+    "author": "aminasalamt",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/aminasalamt/valentine-spending-dataset",
+    "metadata": {
+      "ref": "aminasalamt/valentine-spending-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "nasa-cmapss-turbofan-engine-rul-dataset",
+    "description": "NASA CMAPSS Turbofan Engine RUL Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/fareselgohary003/nasa-cmapss-turbofan-engine-rul-dataset",
+    "author": "fareselgohary003",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/fareselgohary003/nasa-cmapss-turbofan-engine-rul-dataset",
+    "metadata": {
+      "ref": "fareselgohary003/nasa-cmapss-turbofan-engine-rul-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "home-data-for-ml-course",
+    "description": "home data for ml course",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/dansbecker/home-data-for-ml-course",
+    "author": "dansbecker",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/dansbecker/home-data-for-ml-course",
+    "metadata": {
+      "ref": "dansbecker/home-data-for-ml-course",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "logging-and-monitoring-anomalies-dataset",
+    "description": "Logging & Monitoring Anomalies Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/mirzayasirabdullah07/logging-and-monitoring-anomalies-dataset",
+    "author": "mirzayasirabdullah07",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/mirzayasirabdullah07/logging-and-monitoring-anomalies-dataset",
+    "metadata": {
+      "ref": "mirzayasirabdullah07/logging-and-monitoring-anomalies-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "algorithmic-trading-macro-stress-and-asset-regimes",
+    "description": "Algorithmic Trading: Macro Stress & Asset Regimes",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/kanchana1990/algorithmic-trading-macro-stress-and-asset-regimes",
+    "author": "kanchana1990",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/kanchana1990/algorithmic-trading-macro-stress-and-asset-regimes",
+    "metadata": {
+      "ref": "kanchana1990/algorithmic-trading-macro-stress-and-asset-regimes",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "global-supply-chain-risk-and-logistics-2024-2026",
+    "description": "Global Supply Chain Risk & Logistics (2024-2026)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/nudratabbas/global-supply-chain-risk-and-logistics-2024-2026",
+    "author": "nudratabbas",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/nudratabbas/global-supply-chain-risk-and-logistics-2024-2026",
+    "metadata": {
+      "ref": "nudratabbas/global-supply-chain-risk-and-logistics-2024-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "animal-crossing-new-horizons-nookplaza-dataset",
+    "description": "Animal Crossing New Horizons Catalog",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/jessicali9530/animal-crossing-new-horizons-nookplaza-dataset",
+    "author": "jessicali9530",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/jessicali9530/animal-crossing-new-horizons-nookplaza-dataset",
+    "metadata": {
+      "ref": "jessicali9530/animal-crossing-new-horizons-nookplaza-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "gold-price-dynamics-and-market-behavior",
+    "description": "Gold Price Dynamics & Market Behavior",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/ayeshaimran1619/gold-price-dynamics-and-market-behavior",
+    "author": "ayeshaimran1619",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/ayeshaimran1619/gold-price-dynamics-and-market-behavior",
+    "metadata": {
+      "ref": "ayeshaimran1619/gold-price-dynamics-and-market-behavior",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "bmw-resonance-data-20102024",
+    "description": "BMW Resonance Data (2010–2024)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/hassnainzaidi/bmw-resonance-data-20102024",
+    "author": "hassnainzaidi",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/hassnainzaidi/bmw-resonance-data-20102024",
+    "metadata": {
+      "ref": "hassnainzaidi/bmw-resonance-data-20102024",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "global-cybersecurity-threats-20152024",
+    "description": "Global Cybersecurity Threats (2015–2024)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/nvarisha/global-cybersecurity-threats-20152024",
+    "author": "nvarisha",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/nvarisha/global-cybersecurity-threats-20152024",
+    "metadata": {
+      "ref": "nvarisha/global-cybersecurity-threats-20152024",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "olympics-athletes-dataset-18962024",
+    "description": "Olympics Athletes Dataset (1896–2024)🏅",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/ashyou09/olympics-athletes-dataset-18962024",
+    "author": "ashyou09",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/ashyou09/olympics-athletes-dataset-18962024",
+    "metadata": {
+      "ref": "ashyou09/olympics-athletes-dataset-18962024",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "ckd-nhanes-2021-2023-staged-kidney-disease",
+    "description": "CKD-NHANES 2021-2023: Staged Kidney Disease",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/alitaqishah/ckd-nhanes-2021-2023-staged-kidney-disease",
+    "author": "alitaqishah",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/alitaqishah/ckd-nhanes-2021-2023-staged-kidney-disease",
+    "metadata": {
+      "ref": "alitaqishah/ckd-nhanes-2021-2023-staged-kidney-disease",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "fake-and-real-news-dataset-4k",
+    "description": "Fake & Real News Dataset (4K)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/amar5693/fake-and-real-news-dataset-4k",
+    "author": "amar5693",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/amar5693/fake-and-real-news-dataset-4k",
+    "metadata": {
+      "ref": "amar5693/fake-and-real-news-dataset-4k",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "mercedes-stock-data-1996-2026",
+    "description": "Mercedes-Benz Stock Data (1996-2026)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/bsthere/mercedes-stock-data-1996-2026",
+    "author": "bsthere",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/bsthere/mercedes-stock-data-1996-2026",
+    "metadata": {
+      "ref": "bsthere/mercedes-stock-data-1996-2026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "airline-route-profitability-and-cost-analysis",
+    "description": "Airline Route Profitability & Cost Analysis",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/waleedfaheem/airline-route-profitability-and-cost-analysis",
+    "author": "waleedfaheem",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/waleedfaheem/airline-route-profitability-and-cost-analysis",
+    "metadata": {
+      "ref": "waleedfaheem/airline-route-profitability-and-cost-analysis",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "user-listen-time-music-streaming-history",
+    "description": "User Listen Time: Music Streaming History",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/thedatasetengineer/user-listen-time-music-streaming-history",
+    "author": "thedatasetengineer",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/thedatasetengineer/user-listen-time-music-streaming-history",
+    "metadata": {
+      "ref": "thedatasetengineer/user-listen-time-music-streaming-history",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "indian-traffic-e-challan-daily-dataset-20152026",
+    "description": "Indian Traffic E-Challan Daily Dataset (2015–2026)",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/bhanageviraj/indian-traffic-e-challan-daily-dataset-20152026",
+    "author": "bhanageviraj",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/bhanageviraj/indian-traffic-e-challan-daily-dataset-20152026",
+    "metadata": {
+      "ref": "bhanageviraj/indian-traffic-e-challan-daily-dataset-20152026",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "gold-prise",
+    "description": "Gold Market Analysis – 10 Years of Data",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/ayeshaseherr/gold-prise",
+    "author": "ayeshaseherr",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/ayeshaseherr/gold-prise",
+    "metadata": {
+      "ref": "ayeshaseherr/gold-prise",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  },
+  {
+    "name": "work-from-home-employee-burnout-dataset",
+    "description": "Work From Home Employee Burnout Dataset",
+    "source": "kaggle",
+    "source_url": "https://www.kaggle.com/datasets/sonalshinde123/work-from-home-employee-burnout-dataset",
+    "author": "sonalshinde123",
+    "stars": 0,
+    "downloads": 0,
+    "license": "Various",
+    "tags": [
+      "kaggle",
+      "dataset"
+    ],
+    "version": "latest",
+    "category": "dataset",
+    "thumbnail_url": null,
+    "readme_url": "https://www.kaggle.com/datasets/sonalshinde123/work-from-home-employee-burnout-dataset",
+    "metadata": {
+      "ref": "sonalshinde123/work-from-home-employee-burnout-dataset",
+      "last_updated": "None",
+      "usability_rating": 0
+    },
+    "scraped_at": "2026-03-06T15:58:03.057049"
+  }
+]
